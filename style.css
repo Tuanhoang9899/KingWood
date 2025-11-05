@@ -24,6 +24,7 @@ body {
 }
 
 a {
+    cursor: pointer;
     color: inherit;
     text-decoration: none !important;
 }
@@ -694,7 +695,7 @@ section.card-section {
     gap: 16px;
 }
 
-.news-side .news-item {
+.news-side .news-item a{
     display: flex;
     background: #fff;
     border-radius: 12px;
