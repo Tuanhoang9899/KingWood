@@ -30,7 +30,6 @@ a {
 }
 
 
-
 /* Header */
 /* Hamburger */
 .hamburger {
@@ -101,7 +100,8 @@ a {
         background: #fff;
         top: 50px;
     }
-    header{
+
+    header {
         padding: 5px 15px;
         height: 70px;
         top: 0 !important;
@@ -124,10 +124,12 @@ a {
     .header-inner .logo img {
         max-width: 75% !important;
     }
-    section.card-section{
-        padding: 0  15px !important;
+
+    section.card-section {
+        padding: 0 15px !important;
     }
-    .card-row{
+
+    .card-row {
         gap: 40px !important;
     }
 }
@@ -333,6 +335,7 @@ img {
 }
 
 .partners img {
+    object-fit: cover;
     max-height: 70px;
 
 }
@@ -341,6 +344,12 @@ img {
 section.card-section {
     padding: 40px 0
 }
+
+section.card-section .owl-dots.disabled, .cert .owl-dots.disabled,.related_pr .owl-dots.disabled,.news-side .owl-dots.disabled{
+    display: block !important;
+}
+
+
 
 .card-row {
     display: flex;
@@ -443,6 +452,20 @@ section.card-section {
     text-align: right;
 }
 
+.timeline-item.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .timeline-item.left::before {
     right: -9px;
 }
@@ -518,23 +541,25 @@ section.card-section {
     .timeline-content {
         max-width: 100%;
     }
-    .banner_home{
+
+    .banner_home {
         margin-top: 0;
         margin-bottom: 50px;
     }
-    .hero-row{
+
+    .hero-row {
         gap: 10px;
     }
-    .hero-ctas{
+
+    .hero-ctas {
         flex-wrap: wrap;
         gap: 10px;
     }
-    .hero-ctas a{
+
+    .hero-ctas a {
         width: 100%;
     }
 }
-
-
 
 
 /* why choose (carousel) */
@@ -549,12 +574,71 @@ section.card-section {
     font-size: 28px;
 }
 
+
 .cards {
+    height: 100% !important;
     display: grid;
     grid-template-columns: 1fr 1.7fr 1fr;
     gap: 18px;
     overflow: hidden
 }
+
+.cards .owl-item.active.center{
+    transform: scale(1.25);
+}
+
+/* Đặt vùng chứa dots ở giữa */
+.owl-dots {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Mỗi dot là một thanh nhỏ */
+.owl-dot {
+    width: 40px;
+    height: 6px;
+    border-radius: 3px;
+    background: #333 !important;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover nhẹ */
+.owl-dot:hover {
+    background: rgba(236, 153, 7, 0.6) !important;
+}
+
+/* Thanh active */
+.owl-dot.active {
+    background: #ec9907 !important;
+    width: 50px; /* phóng to nhẹ */
+}
+
+/* Hiệu ứng progress chạy từ trái sang phải */
+.owl-dot.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: slideActive 1.2s ease forwards;
+    border-radius: 3px;
+}
+
+/* Keyframes hiệu ứng */
+@keyframes slideActive {
+    from { width: 0%; opacity: 0.6; }
+    to { width: 100%; opacity: 0; }
+}
+
 
 .card {
     flex: 1 0 0;
@@ -580,7 +664,8 @@ section.card-section {
 
 .card p {
     color: var(--muted);
-    font-size: 14px
+    font-size: 14px;
+    margin-bottom: 45px;
 }
 
 /* social/charity carousel */
@@ -680,7 +765,8 @@ section.card-section {
     padding: 16px;
     border-radius: 10px
 }
-.news-main a{
+
+.news-main a {
     color: #333;
 }
 
@@ -698,7 +784,7 @@ section.card-section {
     gap: 16px;
 }
 
-.news-side .news-item a{
+.news-side .news-item a {
     display: flex;
     background: #fff;
     border-radius: 12px;
@@ -930,7 +1016,8 @@ section.card-section {
     color: #626576;
     font-weight: 500;
 }
-.product-card a{
+
+.product-card a {
     color: #090A0B;
     font-weight: 700;
 }
@@ -1002,7 +1089,7 @@ section.card-section {
     border-color: #2f7d32;
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
     .pagination-custom li a {
         width: 28px;
         height: 28px;
@@ -1031,7 +1118,7 @@ section.card-section {
 
 
 /* responsive */
-@media (max-width:990px) {
+@media (max-width: 990px) {
     .hero-row {
         flex-direction: column-reverse;
         align-items: center;
@@ -1062,7 +1149,7 @@ section.card-section {
     }
 }
 
-@media (max-width:640px) {
+@media (max-width: 640px) {
     .header-inner {
         /* padding: 8px 10px; */
         border-radius: 12px
@@ -1089,24 +1176,33 @@ section.card-section {
     .mini-slide {
         min-width: 180px
     }
-    .cards{
+
+    .cards {
         grid-template-columns: unset;
 
     }
-    .contact{
+
+    .contact {
         flex-direction: column;
-        padding:  15px 15px;
+        padding: 15px 15px;
     }
-    .news{
+
+    .news {
         flex-direction: column;
     }
-    .news-side .news-item a{
+
+    .news-side .news-item a {
         flex-direction: column;
     }
-    .product-card h5{
+
+    .product-card h5 {
         font-size: 16px;
     }
+
     .product-card p {
         font-size: 14px;
+    }
+    .cards .owl-item.active.center{
+        transform: scale(1);
     }
 }

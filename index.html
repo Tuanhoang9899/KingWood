@@ -2,386 +2,414 @@
 <html lang="vi">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Kingwood - Trang chủ</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <!-- Google fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;600&display=swap"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!-- jQuery (CDN) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script type="module" src="main.js"></script>
 
 
 </head>
 
 <body>
-    <!-- Overlay -->
-    <div class="overlay"></div>
+<!-- Overlay -->
+<div class="overlay"></div>
 
-    <header>
-        <div class="header-inner container d-flex align-items-center justify-content-between">
-            <!-- Menu trái -->
-            <div class="nav-left d-flex align-items-center menu_left">
-                <nav aria-label="Main navigation">
-                    <a href="index.html" class="btn-active">Trang chủ</a>
-                    <a href="gioithieu.html">Giới thiệu</a>
-                    <a href="service.html">Dịch vụ</a>
-                </nav>
-            </div>
-
-            <!-- Logo ở giữa -->
-            <div class="logo mx-auto">
-                <a href="index.html">
-                    <img src="img/Logo.png" alt="Kingwood">
-                </a>
-
-            </div>
-
-            <!-- Menu phải + ngôn ngữ -->
-            <div class="nav-right d-flex align-items-center menu_right">
-                <nav aria-label="Main navigation">
-                    <a href="category.html">Sản phẩm</a>
-                    <a href="news.html">Tin tức</a>
-                    <a href="contact.html">Liên hệ</a>
-                </nav>
-                <div class="lang ms-3 d-flex align-items-center">
-                    <div class="flag">VN</div>
-                    <div style="width:8px"></div>
-                    <a class="btn-secondary" href="#">EN</a>
-                </div>
-            </div>
+<header>
+    <div class="header-inner container d-flex align-items-center justify-content-between">
+        <!-- Menu trái -->
+        <div class="nav-left d-flex align-items-center menu_left">
+            <nav aria-label="Main navigation">
+                <a href="index.html" class="btn-active">Trang chủ</a>
+                <a href="gioithieu.html">Giới thiệu</a>
+                <a href="service.html">Dịch vụ</a>
+            </nav>
         </div>
 
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="mobile-menu">
-            <ul>
-                <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="gioithieu.html">Giới thiệu</a></li>
-                <li><a href="service.html">Dịch vụ</a></li>
-                <li><a href="category.html">Sản phẩm</a></li>
-                <li><a href="news.html">Tin tức</a></li>
-                <li><a href="contact.html">Liên hệ</a></li>
-                 <div class="lang ms-3 d-flex align-items-center">
-                    <div class="flag">VN</div>
-                    <div style="width:8px"></div>
-                    <a class="btn-secondary" href="#">EN</a>
-                </div>
-            </ul>
+        <!-- Logo ở giữa -->
+        <div class="logo mx-auto">
+            <a href="index.html">
+                <img src="img/Logo.png" alt="Kingwood">
+            </a>
+
         </div>
 
-    </header>
+        <!-- Menu phải + ngôn ngữ -->
+        <div class="nav-right d-flex align-items-center menu_right">
+            <nav aria-label="Main navigation">
+                <a href="category.html">Sản phẩm</a>
+                <a href="news.html">Tin tức</a>
+                <a href="contact.html">Liên hệ</a>
+            </nav>
+            <div class="lang ms-3 d-flex align-items-center">
+                <div class="flag">VN</div>
+                <div style="width:8px"></div>
+                <a class="btn-secondary" href="#">EN</a>
+            </div>
+        </div>
+    </div>
 
-    <main>
-        <!-- hero -->
-        <section class="banner_home container">
-            <div class="hero-row">
-                <div class="hero-left">
-                    <h1 class="eyebrow">Kingwood <span class="eyebrow_sp">- Nhà sản xuất đồ gia dụng gỗ chất lượng
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="service.html">Dịch vụ</a></li>
+            <li><a href="category.html">Sản phẩm</a></li>
+            <li><a href="news.html">Tin tức</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+            <div class="lang ms-3 d-flex align-items-center">
+                <div class="flag">VN</div>
+                <div style="width:8px"></div>
+                <a class="btn-secondary" href="#">EN</a>
+            </div>
+        </ul>
+    </div>
+
+</header>
+
+<main>
+    <!-- hero -->
+    <section class="banner_home container">
+        <div class="hero-row">
+            <div class="hero-left">
+                <h1 class="eyebrow">Kingwood <span class="eyebrow_sp">- Nhà sản xuất đồ gia dụng gỗ chất lượng
                             cao</span></h1>
-                    <p class="hero-sub">OEM/ODM thớt, đũa, tô/chén/khay... xuất khẩu Mỹ, Nhật, Đài Loan, Trung Quốc. Sản
-                        phẩm thân thiện môi trường, gia công theo đơn đặt hàng.</p>
-                    <div class="hero-ctas">
-                        <a class="btn-primary" href="#nangluc">Xem năng lực sản xuất</a>
-                        <a class="btn-secondary" href="contact.html">Liên hệ và báo giá</a>
-                    </div>
-                </div>
-
-                <div class="hero-right">
-                    <div class="product-hero">
-                        <img src="img/Thumb.png" alt="Sản phẩm gỗ">
-                    </div>
+                <p class="hero-sub">OEM/ODM thớt, đũa, tô/chén/khay... xuất khẩu Mỹ, Nhật, Đài Loan, Trung Quốc. Sản
+                    phẩm thân thiện môi trường, gia công theo đơn đặt hàng.</p>
+                <div class="hero-ctas">
+                    <a class="btn-primary" href="#nangluc">Xem năng lực sản xuất</a>
+                    <a class="btn-secondary" href="contact.html">Liên hệ và báo giá</a>
                 </div>
             </div>
-        </section>
-        <section class="partner">
-            <!-- partner logos -->
-            <div class="partners container" aria-hidden="true">
-                <img src="img/1.png" alt="">
-                <img src="img/2.png" alt="">
-                <img src="img/3.png" alt="">
-                <img src="img/4.png" alt="">
-                <img src="img/5.png" alt="">
-                <img src="img/6.png" alt="">
-            </div>
-        </section>
 
-        <!-- story -->
-        <section class="card-section container">
-            <div class="card-row">
-                <div class="story">
-                    <h3>Câu chuyện & Sứ mệnh</h3>
-                    <p>OVN – Bắt nguồn từ xưởng mộc có tiếng vào những năm 1980 tại Thuận An, tỉnh Bình Dương (nay là
-                        TP. HCM). Ông Nguyễn Nhựt Chương đã kế thừa nghề truyền thống gia đình, xây dựng nên thương hiệu
-                        sản phẩm gỗ gia dụng, đổi mới sản xuất theo hướng xuất khẩu.</p>
-                    <div class="small-cta">
-                        <a class="btn-primary" href="#nangluc">Xem năng lực sản xuất</a>
-                    </div>
-                </div>
-
-                <div class="story-image">
-                    <img src="img/Video.png" alt="Giải thưởng">
+            <div class="hero-right">
+                <div class="product-hero">
+                    <img src="img/Thumb.png" alt="Sản phẩm gỗ">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <section class="partner">
+        <!-- partner logos -->
+        <div class="partners container" aria-hidden="true">
+            <img src="img/1.png" alt="">
+            <img src="img/2.png" alt="">
+            <img src="img/3.png" alt="">
+            <img src="img/4.png" alt="">
+            <img src="img/5.png" alt="">
+            <img src="img/6.png" alt="">
+        </div>
+    </section>
 
-        <!-- timeline -->
-        <section class="timeline container">
-            <h4>Cột mốc <span style="color: #EC9907;">phát triển</span></h4>
-            <div class="timeline-inner">
-
-                <!-- Mốc 1980 -->
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year">1980</span>
-                        <img src="img/timeline_1.png" alt="">
-                        <p>Mở xưởng mộc gia đình, sản xuất đồ dùng cho bà con địa phương.</p>
-                    </div>
-                </div>
-
-                <!-- Mốc 1995 -->
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="year">1995</span>
-                        <img src="img/timeline_1.png" alt="">
-                        <p>Mở cửa và hội nhập: Nâng cấp máy móc hiện đại, xuất khẩu đi Đài Loan, Trung Quốc.</p>
-                    </div>
-                </div>
-
-                <!-- Mốc 2000 -->
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year">2000</span>
-                        <img src="img/timeline_1.png" alt="">
-                        <p>Lần đầu tiên xuất khẩu đi Nhật, Mỹ, Hàn với sản phẩm guốc gỗ được ưa chuộng.</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="timeline-more text-center">
-                <a href="#" class="btn-more">Xem thêm</a>
-            </div>
-        </section>
-
-
-
-        <!-- why choose -->
-        <section class="why container">
-            <h4>Tại sao nên chọn <span style="color: #EC9907;">Kingwood</span> </h4>
-            <div class="cards" id="whyCards">
-                <div class="card">
-                    <img src="img/why_choose.png" alt="">
-                    <h5>Chất Lượng Tinh Hoa <br> An Toàn Tuyệt Đối</h5>
-                    <p>Sở hữu vùng trồng nguyên liệu lớn: Sản phẩm của Kingwood được sản xuất từ nguồn nguyên liệu gỗ
-                        rừng trồng, đản bảo sự phát triển bền vững và bảo vệ môi trường.</p>
-                </div>
-                <div class="card">
-                    <img src="img/why_choose_1.png" alt="">
-                    <h5>Chất Lượng Tinh Hoa An Toàn Tuyệt Đối</h5>
-                    <p>Qui mô sản xuất lớn: Sở hữu hệ thống nhà xưởng lên tới 2000 m, hệ thống chuỗi liên kết sản xuất
-                        với 5 thành viên</p>
-                </div>
-                <div class="card">
-                    <img src="img/why_choose.png" alt="">
-                    <h5>Chất Lượng Tinh Hoa An Toàn Tuyệt Đối</h5>
-                    <p>Sở hữu máy móc công nghệ hiện đại: Kingwood trang bị nhiều máy móc tự động hiện đại được nhập
-                        khẩu để tăng năng suất, nâng cao chất lượng sản phẩm, làm được nhiều sản phẩm độc đáo, mới lạ
-                        trên thị trường</p>
+    <!-- story -->
+    <section class="card-section container">
+        <div class="card-row">
+            <div class="story">
+                <h3>Câu chuyện & Sứ mệnh</h3>
+                <p>OVN – Bắt nguồn từ xưởng mộc có tiếng vào những năm 1980 tại Thuận An, tỉnh Bình Dương (nay là
+                    TP. HCM). Ông Nguyễn Nhựt Chương đã kế thừa nghề truyền thống gia đình, xây dựng nên thương hiệu
+                    sản phẩm gỗ gia dụng, đổi mới sản xuất theo hướng xuất khẩu.</p>
+                <div class="small-cta">
+                    <a class="btn-primary" href="#nangluc">Xem năng lực sản xuất</a>
                 </div>
             </div>
-        </section>
 
-        <!-- social / charity carousel -->
-        <section class="card-section container" aria-label="An sinh xã hội">
-            <h4 style="color:var(--accent-2);text-align:center;margin-bottom:12px; font-size: 28px;">An sinh <span
-                    style="color: #EC9907;">xã hội</span> </h4>
-            <div class="mini-carousel" id="miniCarousel">
-                <div class="mini-slide"><img src="img/news.png" alt="">
-                    <p style="margin:8px 0 0;color:var(--muted)">Xây nhà tình thương</p>
-                </div>
-                <div class="mini-slide"><img src="img/news.png" alt="">
-                    <p style="margin:8px 0 0;color:var(--muted)">Tài trợ cho chương trình ngày quốc tế YOGA lần thứ 11
-                        tổ chức tại Bình Dương</p>
-                </div>
-                <div class="mini-slide"><img src="img/news.png" alt="">
-                    <p style="margin:8px 0 0;color:var(--muted)">Tặng quà trung thu cho các cháu</p>
-                </div>
-                <div class="mini-slide"><img src="img/news.png" alt="">
-                    <p style="margin:8px 0 0;color:var(--muted)">Tặng quà tết cho các gia đình khó khăn trong địa phương
-                    </p>
+            <div class="story-image">
+                <img src="img/Video.png" alt="Giải thưởng">
+            </div>
+        </div>
+    </section>
+
+    <!-- timeline -->
+    <section class="timeline container">
+        <h4>Cột mốc <span style="color: #EC9907;">phát triển</span></h4>
+        <div class="timeline-inner">
+
+            <!-- Mốc 1980 -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <span class="year">1980</span>
+                    <img src="img/timeline_1.png" alt="">
+                    <p>Mở xưởng mộc gia đình, sản xuất đồ dùng cho bà con địa phương.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- contact -->
-        <section class="container" id="lienhe" style="padding:30px 0">
-            <h4>Liên hệ nhà phân phối của <span style="color: #EC9907;">Kingwood</span></h4>
-            <p class="pra">Đơn vị chịu trách nhiệm phân phối trực tiếp</span>
-            <div class="contact">
-                <div class="info">
-                    <img src="img/Logo2.png" alt="">
-                    <p style="color:#2A6F2B;margin-top:8px;font-weight: 700;margin-bottom: 10px;">
-                        CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN </p>
-                    <p style="color: #696969; font-size: 16px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
+            <!-- Mốc 1995 -->
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <span class="year">1995</span>
+                    <img src="img/timeline_1.png" alt="">
+                    <p>Mở cửa và hội nhập: Nâng cấp máy móc hiện đại, xuất khẩu đi Đài Loan, Trung Quốc.</p>
+                </div>
+            </div>
+
+            <!-- Mốc 2000 -->
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <span class="year">2000</span>
+                    <img src="img/timeline_1.png" alt="">
+                    <p>Lần đầu tiên xuất khẩu đi Nhật, Mỹ, Hàn với sản phẩm guốc gỗ được ưa chuộng.</p>
+                </div>
+            </div>
+
+            <!-- Các mốc ẩn ban đầu -->
+            <div class="timeline-item left hidden">
+                <div class="timeline-content">
+                    <span class="year">2010</span>
+                    <img src="img/timeline_1.png" alt="">
+                    <p>Ra mắt thương hiệu Kingwood chính thức, tập trung sản xuất thớt gỗ cao cấp.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right hidden">
+                <div class="timeline-content">
+                    <span class="year">2024</span>
+                    <img src="img/timeline_1.png" alt="">
+                    <p>Đạt chứng nhận OCOP 3 sao và mở rộng hệ thống sản xuất tại Bình Dương.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="timeline-more text-center">
+            <a href="" class="btn-more">Xem thêm</a>
+        </div>
+    </section>
+
+
+    <!-- why choose -->
+    <section class="why container">
+        <h4>Tại sao nên chọn <span style="color: #EC9907;">Kingwood</span></h4>
+        <div class="cards owl-carousel" id="whyCards">
+            <div class="card">
+                <img src="img/why_choose_1.png" alt="">
+                <h5>Chất Lượng Tinh Hoa <br> An Toàn Tuyệt Đối</h5>
+                <p>Sở hữu vùng trồng nguyên liệu lớn: Sản phẩm của Kingwood được sản xuất từ nguồn nguyên liệu gỗ
+                    rừng trồng, đản bảo sự phát triển bền vững và bảo vệ môi trường.</p>
+            </div>
+            <div class="card">
+                <img src="img/why_choose_1.png" alt="">
+                <h5>Chất Lượng Tinh Hoa An Toàn Tuyệt Đối</h5>
+                <p>Qui mô sản xuất lớn: Sở hữu hệ thống nhà xưởng lên tới 2000 m, hệ thống chuỗi liên kết sản xuất
+                    với 5 thành viên</p>
+            </div>
+            <div class="card">
+                <img src="img/why_choose_1.png" alt="">
+                <h5>Chất Lượng Tinh Hoa An Toàn Tuyệt Đối</h5>
+                <p>Sở hữu máy móc công nghệ hiện đại: Kingwood trang bị nhiều máy móc tự động hiện đại được nhập
+                    khẩu để tăng năng suất, nâng cao chất lượng sản phẩm, làm được nhiều sản phẩm độc đáo, mới lạ
+                    trên thị trường</p>
+            </div>
+            <div class="card">
+                <img src="img/why_choose_1.png" alt="">
+                <h5>Uy tín và bền vững</h5>
+                <p>Cam kết mang đến sản phẩm thân thiện môi trường và đảm bảo trách nhiệm xã hội.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- social / charity carousel -->
+    <section class="card-section container" aria-label="An sinh xã hội">
+        <h4 style="color:var(--accent-2);text-align:center;margin-bottom:12px; font-size: 28px;">An sinh <span
+                style="color: #EC9907;">xã hội</span></h4>
+        <div class="mini-carousel owl-carousel" id="miniCarousel">
+            <div class="mini-slide"><img src="img/news.png" alt="">
+                <p style="margin:8px 0 0;color:var(--muted)">Xây nhà tình thương</p>
+            </div>
+            <div class="mini-slide"><img src="img/news.png" alt="">
+                <p style="margin:8px 0 0;color:var(--muted)">Tài trợ cho chương trình ngày quốc tế YOGA lần thứ 11
+                    tổ chức tại Bình Dương</p>
+            </div>
+            <div class="mini-slide"><img src="img/news.png" alt="">
+                <p style="margin:8px 0 0;color:var(--muted)">Tặng quà trung thu cho các cháu</p>
+            </div>
+            <div class="mini-slide"><img src="img/news.png" alt="">
+                <p style="margin:8px 0 0;color:var(--muted)">Tặng quà tết cho các gia đình khó khăn trong địa phương
+                </p>
+            </div>
+            <div class="mini-slide"><img src="img/news.png" alt="">
+                <p style="margin:8px 0 0;color:var(--muted)">Tặng quà tết cho các gia đình khó khăn trong địa phương
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section class="container" id="lienhe" style="padding:30px 0">
+        <h4>Liên hệ nhà phân phối của <span style="color: #EC9907;">Kingwood</span></h4>
+        <p class="pra">Đơn vị chịu trách nhiệm phân phối trực tiếp</span>
+        <div class="contact">
+            <div class="info">
+                <img src="img/Logo2.png" alt="">
+                <p style="color:#2A6F2B;margin-top:8px;font-weight: 700;margin-bottom: 10px;">
+                    CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN </p>
+                <p style="color: #696969; font-size: 16px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
                                 d="M6.4149 19.5133V11.7017L4.02447 13.5372L3 12.1713L12.391 5L15.8059 7.60386V5.85372H18.367V9.56743L21.7819 12.1713L20.7575 13.5372L18.367 11.7017V19.5133H14.0984V14.391H10.6835V19.5133H6.4149ZM10.6835 10.9974H14.0984C14.0984 10.5421 13.9277 10.1685 13.5862 9.87648C13.2447 9.5845 12.8463 9.4388 12.391 9.43937C11.9357 9.43994 11.5372 9.58593 11.1958 9.87733C10.8543 10.1687 10.6835 10.5421 10.6835 10.9974Z"
-                                fill="#2A6F2B" />
-                        </svg>
-                        231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh
-                        <br>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
+                                fill="#2A6F2B"/>
+                    </svg>
+                    231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh
+                    <br>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
                                 d="M7.09048 10.6505C8.31985 13.0666 10.3005 15.0387 12.7165 16.2766L14.5947 14.3984C14.8252 14.1679 15.1667 14.091 15.4655 14.1935C16.4217 14.5094 17.4547 14.6801 18.5133 14.6801C18.9829 14.6801 19.367 15.0643 19.367 15.5338V18.5133C19.367 18.9829 18.9829 19.367 18.5133 19.367C10.4968 19.367 4 12.8702 4 4.85372C4 4.38418 4.38418 4 4.85372 4H7.84176C8.31131 4 8.69549 4.38418 8.69549 4.85372C8.69549 5.92088 8.86623 6.94535 9.18211 7.90152C9.27602 8.20033 9.20772 8.53328 8.96868 8.77232L7.09048 10.6505Z"
-                                fill="#2A6F2B" />
-                        </svg>
-                        0962.963.238
-                        <br>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
+                                fill="#2A6F2B"/>
+                    </svg>
+                    0962.963.238
+                    <br>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
                                 d="M18.367 5H4.70745C3.76835 5 3.00854 5.76835 3.00854 6.70745L3 16.9521C3 17.8912 3.76835 18.6596 4.70745 18.6596H18.367C19.3061 18.6596 20.0745 17.8912 20.0745 16.9521V6.70745C20.0745 5.76835 19.3061 5 18.367 5ZM18.367 8.4149L11.5372 12.6835L4.70745 8.4149V6.70745L11.5372 10.9761L18.367 6.70745V8.4149Z"
-                                fill="#2A6F2B" />
-                        </svg>
+                                fill="#2A6F2B"/>
+                    </svg>
 
-                        info@kingwoodfactory.com
-                    </p>
+                    info@kingwoodfactory.com
+                </p>
+            </div>
+            <form class="form" id="contactForm" style="flex:1; text-align: center;">
+                <div style="width: 100%; display: flex;gap: 15px;">
+                    <input style="width: 50%;" type="text" name="name" placeholder="Họ Và Tên" required>
+                    <input style="width: 50%;" type="text" placeholder="Số điện thoại" name="phone">
                 </div>
-                <form class="form" id="contactForm" style="flex:1; text-align: center;">
-                    <div style="width: 100%; display: flex;gap: 15px;">
-                        <input style="width: 50%;" type="text" name="name" placeholder="Họ Và Tên" required>
-                        <input style="width: 50%;" type="text" placeholder="Số điện thoại" name="phone">
-                    </div>
-                    <input type="email" placeholder="Email" name="email">
-                    <textarea name="message" placeholder="Nội dung liên hệ" rows="5"></textarea>
+                <input type="email" placeholder="Email" name="email">
+                <textarea name="message" placeholder="Nội dung liên hệ" rows="5"></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- news + footer -->
+    <section class="container" style="padding-bottom:80px">
+        <h4
+                style="color:var(--accent-2);margin-bottom:20px; text-align: center; font-size: 28px; font-weight: 600;">
+            Tin tức thị trường</h4>
+        <div class="news">
+            <div class="news-main">
+                <a href="news_details.html">
+                    <img src="img/news_2.png" alt="">
+                    <h5 style="margin:10px 0">Lorem ipsum dolor sit amet consectetur.</h5>
+                    <p style="color:var(--muted)">Tóm tắt tin chính... Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</p>
+                </a>
+            </div>
+            <div class="news-side">
+                <div class="news-item">
+                    <a href="news_details.html">
+                        <img src="img/news_2.png" alt="Tin tức">
+                        <div class="news-content">
+                            <p class="date">Thứ Sáu, 26/09/2025</p>
+                            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                            <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
+                                listen</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="news-item">
+                    <a href="news_details.html">
+                        <img src="img/news_2.png" alt="Tin tức">
+                        <div class="news-content">
+                            <p class="date">Thứ Sáu, 26/09/2025</p>
+                            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                            <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
+                                listen</p>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="news-item">
+                    <a href="news_details.html">
+                        <img src="img/news_2.png" alt="Tin tức">
+                        <div class="news-content">
+                            <p class="date">Thứ Sáu, 26/09/2025</p>
+                            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                            <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
+                                listen</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <!-- Cột 1 -->
+            <div class="footer-col">
+                <img src="img/Logo.png" alt="Kingwood" class="footer-logo">
+                <p class="company-name">CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN</p>
+                <p class="info">
+                    <i class="bi bi-geo-alt"></i> 231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh<br>
+                    <i class="bi bi-telephone"></i> 0962.963.238<br>
+                    <i class="bi bi-envelope"></i> info@kingwoodfactory.com
+                </p>
+            </div>
+
+            <!-- Cột 2 -->
+            <div class="footer-col">
+                <ul class="footer-menu">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Dịch vụ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <!-- Cột 3 -->
+            <div class="footer-col">
+                <h5 class="footer-title">Mạng xã hội</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
+
+                <h5 class="footer-title mt-3">Liên hệ với Kingwood qua Email</h5>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email" required>
                     <button type="submit">Gửi</button>
                 </form>
             </div>
-        </section>
+        </div>
 
-        <!-- news + footer -->
-        <section class="container" style="padding-bottom:80px">
-            <h4
-                style="color:var(--accent-2);margin-bottom:20px; text-align: center; font-size: 28px; font-weight: 600;">
-                Tin tức thị trường</h4>
-            <div class="news">
-                <div class="news-main">
-                    <a href="news_details.html">
-                        <img src="img/news_2.png" alt="">
-                        <h5 style="margin:10px 0">Lorem ipsum dolor sit amet consectetur.</h5>
-                        <p style="color:var(--muted)">Tóm tắt tin chính... Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit.</p>
-                    </a>
-                </div>
-                <div class="news-side">
-                    <div class="news-item">
-                        <a href="news_details.html">
-                            <img src="img/news_2.png" alt="Tin tức">
-                            <div class="news-content">
-                                <p class="date">Thứ Sáu, 26/09/2025</p>
-                                <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-                                <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
-                                    listen</p>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="news-item">
-                        <a href="news_details.html">
-                            <img src="img/news_2.png" alt="Tin tức">
-                            <div class="news-content">
-                                <p class="date">Thứ Sáu, 26/09/2025</p>
-                                <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-                                <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
-                                    listen</p>
-                            </div>
-                        </a>
-
-                    </div>
-
-                    <div class="news-item">
-                        <a href="news_details.html">
-                            <img src="img/news_2.png" alt="Tin tức">
-                            <div class="news-content">
-                                <p class="date">Thứ Sáu, 26/09/2025</p>
-                                <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-                                <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
-                                    listen</p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <!-- Cột 1 -->
-                <div class="footer-col">
-                    <img src="img/Logo.png" alt="Kingwood" class="footer-logo">
-                    <p class="company-name">CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN</p>
-                    <p class="info">
-                        <i class="bi bi-geo-alt"></i> 231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh<br>
-                        <i class="bi bi-telephone"></i> 0962.963.238<br>
-                        <i class="bi bi-envelope"></i> info@kingwoodfactory.com
-                    </p>
-                </div>
-
-                <!-- Cột 2 -->
-                <div class="footer-col">
-                    <ul class="footer-menu">
-                        <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Dịch vụ</a></li>
-                        <li><a href="#">Sản phẩm</a></li>
-                        <li><a href="#">Tin tức</a></li>
-                        <li><a href="#">Liên hệ</a></li>
-                    </ul>
-                </div>
-
-                <!-- Cột 3 -->
-                <div class="footer-col">
-                    <h5 class="footer-title">Mạng xã hội</h5>
-                    <div class="social-icons">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-youtube"></i></a>
-                    </div>
-
-                    <h5 class="footer-title mt-3">Liên hệ với Kingwood qua Email</h5>
-                    <form class="subscribe-form">
-                        <input type="email" placeholder="Email" required>
-                        <button type="submit">Gửi</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>©2025 - CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Chính sách bảo mật</a>
-                    <a href="#">Điều khoản dịch vụ</a>
-                </div>
+        <div class="footer-bottom">
+            <p>©2025 - CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản dịch vụ</a>
             </div>
         </div>
-    </footer>
-
+    </div>
+</footer>
 
 
 </body>

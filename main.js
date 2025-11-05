@@ -54,15 +54,7 @@ $(function () {
         });
     })();
 
-    // basic "why" carousel responsiveness (just horizontal scroll on small screens)
-    // no extra JS needed
 
-    // contact submit demo
-    $('#contactForm').on('submit', function (e) {
-        e.preventDefault();
-        alert('Cảm ơn! Mẫu liên hệ đã được gửi (demo). Bạn thay phần này bằng AJAX / API gửi về server.');
-        $(this).trigger('reset');
-    });
 
 
 
@@ -88,18 +80,136 @@ $(document).ready(function () {
         $(this).fadeOut(200);
     });
 
-    $('.slider-for').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
+    // Ẩn ban đầu
+    $(".timeline-item.hidden").hide();
+
+    // Mỗi lần nhấn, hiển thị thêm 3 mốc (hoặc ít hơn nếu còn ít)
+    $(".btn-more").on("click", function(e) {
+        e.preventDefault();
+
+        let $hiddenItems = $(".timeline-item.hidden:hidden");
+        $hiddenItems.slice(0, 3).slideDown(400); // hiện dần 3 mốc
+
+        // Khi không còn mốc ẩn thì ẩn nút
+        if ($hiddenItems.length <= 3) {
+            $(this).fadeOut();
+        }
     });
-    $('.slider-nav').slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        asNavFor: '.slider-for',
-        focusOnSelect: true,
-        arrows: false
+
+    // Mở popup
+    $("#contactBtn").click(function(){
+        $("#contactPopup").fadeIn(300).css("display", "flex");
     });
+
+    // Đóng popup
+    $(".popup-close, .popup-overlay").click(function(e){
+        if($(e.target).is(".popup-overlay, .popup-close")){
+            $("#contactPopup").fadeOut(300);
+        }
+    });
+
+    var owl = $("#whyCards");
+    owl.owlCarousel({
+        loop: true,              // Cho phép lặp vô tận
+        margin: 70,              // Khoảng cách giữa các card
+        center: true,
+        dots: true,             // Bỏ nút tròn
+        autoplay: false,          // Tự động chạy
+        autoplayTimeout: 5000,   // 4 giây chuyển slide
+        smartSpeed: 1000,         // Tốc độ chuyển slide
+        responsive: {
+            0: {
+                items: 1             // Mobile: 1 card
+            },
+            768: {
+                items: 2             // Tablet: 2 card
+            },
+            1024: {
+                items: 3             // Desktop: 3 card
+            }
+        },
+    });
+
+    $(".mini-carousel").owlCarousel({
+        loop: false,              // Cho phép lặp vô tận
+        margin: 8,              // Khoảng cách giữa các card
+        dots: true,             // Bỏ nút tròn
+        autoplay: false,          // Tự động chạy
+        autoplayTimeout: 5000,   // 4 giây chuyển slide
+        smartSpeed: 1000,         // Tốc độ chuyển slide
+        responsive: {
+            0: {
+                items: 1             // Mobile: 1 card
+            },
+            768: {
+                items: 2             // Tablet: 2 card
+            },
+            1024: {
+                items: 4             // Desktop: 3 card
+            }
+        },
+    });
+
+    $(".cert").owlCarousel({
+        loop: false,              // Cho phép lặp vô tận
+        margin: 8,              // Khoảng cách giữa các card
+        dots: true,             // Bỏ nút tròn
+        autoplay: false,          // Tự động chạy
+        autoplayTimeout: 5000,   // 4 giây chuyển slide
+        smartSpeed: 1000,         // Tốc độ chuyển slide
+        responsive: {
+            0: {
+                items: 2            // Mobile: 1 card
+            },
+            768: {
+                items: 2             // Tablet: 2 card
+            },
+            1024: {
+                items: 4             // Desktop: 3 card
+            }
+        },
+    });
+
+    $(".related_pr").owlCarousel({
+        loop: true,              // Cho phép lặp vô tận
+        margin: 20,              // Khoảng cách giữa các card
+        center: true,
+        dots: true,             // Bỏ nút tròn
+        autoplay: false,          // Tự động chạy
+        autoplayTimeout: 5000,   // 4 giây chuyển slide
+        smartSpeed: 1000,         // Tốc độ chuyển slide
+        responsive: {
+            0: {
+                items: 2            // Mobile: 1 card
+            },
+            768: {
+                items: 2             // Tablet: 2 card
+            },
+            1024: {
+                items: 3             // Desktop: 3 card
+            }
+        },
+    });
+
+    $(".news-side.detail").owlCarousel({
+        loop: false,              // Cho phép lặp vô tận
+        margin: 20,              // Khoảng cách giữa các card
+        dots: true,             // Bỏ nút tròn
+        autoplay: false,          // Tự động chạy
+        autoplayTimeout: 5000,   // 4 giây chuyển slide
+        smartSpeed: 1000,         // Tốc độ chuyển slide
+        responsive: {
+            0: {
+                items: 2            // Mobile: 1 card
+            },
+            768: {
+                items: 2             // Tablet: 2 card
+            },
+            1024: {
+                items: 3             // Desktop: 3 card
+            }
+        },
+    });
+
+
 });
