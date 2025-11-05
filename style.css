@@ -925,6 +925,11 @@ section.card-section {
 .product-card p {
     font-size: 16px;
     color: #626576;
+    font-weight: 500;
+}
+.product-card a{
+    color: #090A0B;
+    font-weight: 700;
 }
 
 

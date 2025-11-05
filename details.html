@@ -1,1011 +1,623 @@
-<html lang="en">
+<!doctype html>
+<html lang="vi">
 
 <head>
-    <script src="https://codesandbox.io/p/preview-protocol.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tin tức chi tiết</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Kingwood - Danh mục sản phẩm</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="main.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+          href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Google fonts -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;600&display=swap"
+            rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- jQuery (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="module" src="main.js"></script>
+
+    <style>
+        .banner_home.category {
+            text-align: center;
+        }
+
+        .banner_home.category .hero-row {
+            display: unset;
+        }
+
+        .banner_home.category .hero-left {
+            max-width: 100%;
+        }
+        .product-details{
+            padding: 50px 0 50px;
+            background: #fff;
+        }
+        .product-detail {
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+
+        /* ==== LEFT: SLIDER ==== */
+        .product-gallery {
+            width: 40%;
+
+        }
+
+        .slider-for img {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .slider-nav {
+            margin-top: 10px;
+        }
+
+        .slider-nav img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.3s ease;
+        }
+
+        .slider-nav .slick-current img {
+            border-color: #1b5e20;
+        }
+
+        /* ==== RIGHT: INFO ==== */
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-info h2 {
+            color: #165a2b;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            font-size: 15px;
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .product-info strong {
+            color: #165a2b;
+        }
+
+        .product-info .btn-contact {
+            background: #f4a400;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .product-info .btn-contact:hover {
+            background: #db9000;
+        }
+
+        /* ==== FEATURES ==== */
+        .product-features {
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            text-align: center;
+            width: 150px;
+        }
+
+        .feature-item img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #165a2b;
+        }
+        /* Breadcrumb */
+        .breadcrumb-nav {
+            gap: 2px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .breadcrumb-nav a:first-child {
+            padding-left: 0;
+        }
+
+        .breadcrumb-nav a {
+            padding-left: 3px;
+            padding-right: 3px;
+            color: #136b3a;
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
+        .intro-product {
+            background: #fff8ef;
+            padding: 60px 0;
+        }
+
+
+        .intro-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .intro-text {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .intro-title span {
+            display: inline-block;
+            border: 1px solid #1a5e28;
+            border-bottom: 0;
+            padding: 6px 14px;
+            color: #1a5e28;
+            font-weight: 500;
+        }
+
+        .intro-text h2 {
+            margin-top: 20px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .intro-text h2 span {
+            color: #f49b0b;
+        }
+
+        .intro-text p {
+            margin-top: 14px;
+            color: #444;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .intro-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .intro-image img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        #related h4{
+
+                text-align: center;
+                font-size: 28px;
+                color: #1f5d2b;
+                font-weight: 700;
+                margin-bottom: 20px;
+
+        }
+        #related .pra {
+            text-align: center;
+        }
+
+        @media (max-width: 992px) {
+            .intro-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .intro-text h2 {
+                font-size: 22px;
+            }
+            .intro-image img {
+                max-width: 90%;
+            }
+        }
+
+        /* ==== RESPONSIVE ==== */
+        @media (max-width: 992px) {
+            .product-detail {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-gallery {
+                width: 100%;
+            }
+
+            .product-info {
+                text-align: start;
+            }
+            .breadcrumb-nav {
+                font-size: 13px;
+            }
+            .breadcrumb-nav{
+                display: block;
+            }
+            .breadcrumb-nav a{
+                padding-right: 3px;
+                padding-left: 3px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner_home.category {
+                margin-top: 50px;
+            }
+
+            .product-card {
+                height: 100%;
+                padding: 10px;
+            }
+
+            .product-page {
+                padding-top: 0 !important;
+            }
+        }
+    </style>
 </head>
-<style>
-    :root {
-        --primary-color: #262626;
-        /* Màu chữ chính */
-        --accent-color: #d7131b;
-        /* Màu nhấn (Cam nổi bật) */
-        --bg-light: #f9f9f9;
-        --border-color: #eee;
-        --facebook-color: #1877f2;
-        --twitter-color: #1da1f2;
-        --pinterest-color: #bd081c;
-    }
-
-    .content-wrapper {
-        padding: 50px 0;
-        top: 81px;
-        margin-bottom: 50px;
-    }
-
-    article {
-            margin-bottom: 45px !important;
-        max-width: 900px;
-        margin: 0 auto;
-            padding-bottom: 40px;
-                padding: 29px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 81, 163, .4);
-    }
-
-    .article-header {
-        text-align: center;
-        padding: 0px 0 30px;
-    }
-    
-
-    .article-header .category {
-        display: inline-block;
-        font-size: 0.85em;
-        color: var(--accent-color);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .article-header h1 {
-       font-family: Inter;
-      font-size: 26px;
-        font-weight: 900;
-        line-height: 1.1;
-        margin: 10px 0 20px;
-    }
-
-    .article-meta {
-        align-items: center;
-        color: #777;
-        font-size: 0.9em;
-        border-top: 1px solid var(--border-color);
-        border-bottom: 1px solid var(--border-color);
-        padding: 15px 0;
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-    }
-
-    .author-info {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .author-info img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .article-meta span {
-        font-style: italic;
-        color: var(--primary-color);
-        font-weight: 500;
-    }
-
-    /* Ảnh Nổi Bật */
-    .featured-image {
-        margin: 40px 0;
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Nội dung chính */
-    .article-content {
-        padding-bottom: 50px;
-    }
-
-    .article-content p {
-        margin-bottom: 25px;
-        font-size: 1.1em;
-        text-align: justify;
-        color: #000;
-    }
-
-    .article-content h2 {
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-        font-size: 25px !important;
-        color: var(--primary-color) !important;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        border-bottom: 2px solid var(--border-color);
-        padding-bottom: 5px;
-    }
-
-    .article-content blockquote {
-        border-left: 5px solid var(--accent-color);
-        padding-left: 20px;
-        margin: 30px 0;
-        font-size: 1.3em;
-        font-style: italic;
-        background-color: var(--bg-light);
-        padding: 20px;
-        border-radius: 5px;
-    }
-
-    /* --------------------------------- */
-    /* 3. CSS Chia Sẻ Mạng Xã Hội */
-    /* --------------------------------- */
-
-    .share-sticky-bar {
-        /* Sử dụng Sticky để cố định thanh chia sẻ khi cuộn */
-        position: sticky;
-        top: 100px;
-        /* Khoảng cách từ đỉnh viewport khi cuộn */
-
-        /* Định vị nó ở bên trái của nội dung bài viết */
-        float: left;
-        margin-left: -100px;
-        /* Đẩy nó ra ngoài lề trái của container */
-        width: 40px;
-        /* Chiều rộng bằng icon */
-
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        /* Tăng z-index để nó nằm trên nội dung khi cuộn */
-        z-index: 10;
-    }
-
-    /* Ẩn thanh chia sẻ trên mobile hoặc khi màn hình quá hẹp */
-    @media (max-width: 1050px) {
-        .share-sticky-bar {
-            display: none;
-        }
-    }
-
-    .share-sticky-bar a {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 1.1em;
-        transition: transform 0.2s, opacity 0.2s;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .share-sticky-bar a:hover {
-        transform: scale(1.1);
-        opacity: 0.9;
-    }
-
-    .share-sticky-bar .facebook {
-        background-color: var(--facebook-color);
-    }
-
-    .share-sticky-bar .twitter {
-        background-color: var(--twitter-color);
-    }
-
-    .share-sticky-bar .pinterest {
-        background-color: var(--pinterest-color);
-    }
-
-    .share-sticky-bar .link {
-        background-color: var(--primary-color);
-    }
-
-    /* --------------------------------- */
-    /* 4. CSS Responsive */
-    /* --------------------------------- */
-
-    @media (max-width: 768px) {
-        .article-header h1 {
-            font-size: 2.2em;
-        }
-
-        .article-meta {
-            flex-direction: column;
-            gap: 5px;
-            padding: 10px 0;
-        }
-
-        .featured-image {
-            height: 300px;
-            margin: 20px 0;
-        }
-
-        .article-content p {
-            font-size: 1em;
-        }
-
-        .article-content blockquote {
-            font-size: 1.1em;
-            margin: 20px 0;
-        }
-    }
-
-
-    /* Tiêu đề Danh mục */
-    .category-title-bar {
-        text-align: center;
-        padding: 40px 0 30px;
-        border-bottom: 3px double var(--border-color);
-        margin-bottom: 40px;
-    }
-
-    .category-title-bar span {
-        font-size: 26px;
-        color: var(--primary-color);
-        font-family: Inter;
-        letter-spacing: 2px;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    .category-title-bar h1 {
-        font-size: 16px;
-        color: #4d4d4d;
-        font-family: Inter;
-        margin: 5px 0 0;
-        font-weight: 900;
-    }
-
-    /* Khu vực Tin Chính (2 Cột Lớn) */
-    .main-articles {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* Chia thành 2 cột bằng nhau */
-        gap: 30px;
-        margin-bottom: 50px;
-    }
-
-    .main-card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease;
-    }
-
-    .main-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .main-card img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-    }
-
-    .card-content {
-        padding: 20px;
-        background-color: var(--bg-light);
-    }
-
-    .category-tag {
-        display: inline-block;
-        background-color: var(--accent-color);
-        /* Màu nhấn */
-        color: #fff;
-        padding: 4px 10px;
-        font-size: 10px;
-        font-weight: bold;
-        text-transform: uppercase;
-        border-radius: 3px;
-        margin-bottom: 10px;
-    }
-
-    .main-card h2 a {
-        font-size: 21px;
-        color: var(--primary-color);
-        text-decoration: none;
-        line-height: 1.2;
-        font-weight: 700;
-    }
-
-    .main-card h2 a:hover {
-        color: var(--accent-color);
-    }
-
-    .summary {
-        color: #666;
-        margin: 10px 0;
-    }
-
-    .read-more {
-        font-weight: bold;
-        color: var(--accent-color);
-        cursor: pointer;
-        font-size: 0.9em;
-    }
-
-    /* Khu vực Lưới Bài Viết (Grid Articles) */
-    .grid-articles h2 {
-        font-size: 30px !important;
-        font-weight: 700;
-        border-left: 5px solid var(--accent-color);
-        padding-left: 15px;
-        margin-bottom: 30px;
-        color: var(--primary-color) !important;
-    }
-
-    .article-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        /* Tự động chia cột */
-        gap: 30px;
-    }
-
-    .grid-card {
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        overflow: hidden;
-        background-color: #fff;
-        transition: box-shadow 0.3s ease;
-    }
-
-    .grid-card:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .grid-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
-    .card-info {
-        padding: 15px;
-    }
-
-    .grid-card h3 a {
-        font-size: 21px;
-        font-weight: 600;
-        color: var(--primary-color);
-        text-decoration: none;
-        display: block;
-        margin: 5px 0 10px;
-    }
-
-    .grid-card h3 a:hover {
-        color: var(--accent-color);
-    }
-
-    .meta-date {
-        font-size: 0.8em;
-        color: #999;
-    }
-
-    /* CSS cho tính năng Load More */
-    .hidden-article {
-        display: none;
-        /* Ẩn bài viết ban đầu */
-    }
-
-    /* Nút Tải Thêm */
-    .load-more-btn {
-        text-align: center;
-        margin: 50px 0;
-    }
-
-    .load-more-btn button {
-        background-color: var(--accent-color);
-        color: #fff;
-        padding: 12px 30px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1em;
-        cursor: pointer;
-        transition: background-color 0.3s ease, opacity 0.3s ease;
-    }
-
-    .load-more-btn button:hover:not(:disabled) {
-        background-color: var(--accent-color);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-        .main-articles {
-            grid-template-columns: 1fr;
-            /* Dưới 900px chuyển sang 1 cột */
-        }
-    }
-
-    .video-section h2 {
-        font-size: 30px !important;
-        font-weight: 700;
-        border-left: 5px solid var(--accent-color);
-        padding-left: 15px;
-        margin-bottom: 30px;
-        color: var(--primary-color);
-    }
-
-    .video-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        /* Video chính 2 phần, video phụ 1 phần */
-        gap: 30px;
-        background-color: var(--bg-light);
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        padding: 20px;
-    }
-
-    .main-video {
-        overflow: hidden;
-    }
-
-    .main-video iframe {
-        width: 100%;
-        height: 350px;
-        /* Chiều cao cố định cho video chính */
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .main-video .video-info {
-        padding-top: 15px;
-    }
-
-    .main-video h3 a {
-        font-size: 26px;
-        color: var(--primary-color);
-        text-decoration: none;
-        line-height: 1.3;
-        font-weight: 600;
-    }
-
-    .main-video h3 a:hover {
-        color: var(--accent-color);
-    }
-
-    .main-video p {
-        color: #666;
-        font-size: 0.95em;
-        margin-top: 10px;
-    }
-
-    .side-videos {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .side-video-item {
-        display: flex;
-        gap: 10px;
-        align-items: flex-start;
-        background-color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-        cursor: pointer;
-        /* Thêm con trỏ tay để gợi ý có thể click */
-        transition: background-color 0.2s;
-    }
-
-    .side-video-item:hover {
-        background-color: #f0f0f0;
-        /* Hiệu ứng hover nhẹ */
-    }
-
-    .side-video-item img {
-        width: 120px;
-        /* Chiều rộng ảnh thumbnail */
-        height: 70px;
-        /* Chiều cao ảnh thumbnail */
-        object-fit: cover;
-        border-radius: 4px;
-    }
-
-    .side-video-text h4 a {
-        font-size: 21px;
-        color: var(--primary-color);
-        text-decoration: none;
-        line-height: 1.3;
-        font-weight: 500;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        /* Giới hạn 2 dòng */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .side-video-text h4 a:hover {
-        color: var(--accent-color);
-    }
-
-    .video-duration {
-        font-size: 0.8em;
-        color: #999;
-        margin-top: 5px;
-        display: block;
-    }
-
-    /* Responsive cho khối Video */
-    @media (max-width: 768px) {
-        .video-grid {
-            grid-template-columns: 1fr;
-            /* Dưới 768px chuyển sang 1 cột */
-        }
-
-        .main-video iframe {
-            height: 250px;
-            /* Giảm chiều cao video chính trên mobile */
-        }
-    }
-
-    .video-section {
-        margin-bottom: 50px;
-        margin-top: 100px;
-    }
-
-    /* Khu vực Thư viện Ảnh */
-    .photo-gallery-section {
-        margin-bottom: 50px;
-    }
-
-    .photo-gallery-section h2 {
-        font-size: 30px !important;
-        font-weight: 700;
-        border-left: 5px solid var(--accent-color);
-        padding-left: 15px;
-        margin-bottom: 30px;
-        color: var(--primary-color);
-    }
-
-    .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        /* Chia cột tự động, min 250px */
-        grid-auto-rows: minmax(180px, auto);
-        /* Chiều cao hàng tối thiểu */
-        gap: 15px;
-    }
-
-    .gallery-item {
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: block;
-        /* Đảm bảo link hiển thị đúng */
-    }
-
-    .gallery-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    }
-
-    .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .gallery-item .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-        color: #fff;
-        padding: 15px;
-        transform: translateY(100%);
-        transition: transform 0.3s ease;
-        font-size: 0.9em;
-    }
-
-    .gallery-item:hover .overlay {
-        transform: translateY(0);
-    }
-
-    .gallery-item .overlay p {
-        margin: 0;
-        font-weight: 600;
-        line-height: 1.3;
-    }
-
-    .hidden-article,
-    .hidden-gallery-item {
-        display: none;
-    }
-
-    /* Ảnh lớn trong lưới gallery */
-    .gallery-item.large-item {
-        grid-column: span 2;
-        /* Chiếm 2 cột */
-        grid-row: span 2;
-        /* Chiếm 2 hàng */
-    }
-
-    /* Responsive cho Gallery */
-    @media (max-width: 768px) {
-        .gallery-grid {
-            grid-template-columns: 1fr;
-            /* Dưới 768px chuyển sang 1 cột */
-        }
-
-        .gallery-item.large-item {
-            grid-column: span 1;
-            /* Ảnh lớn cũng chỉ chiếm 1 cột trên mobile */
-            grid-row: span 1;
-            /* Ảnh lớn cũng chỉ chiếm 1 hàng trên mobile */
-        }
-    }
-</style>
-
 
 <body>
-    <header id="mainHeader" class="main-header">
-        <div class="container position-relative">
-            <div class="d-flex justify-content-between align-items-center flex-wrap">
-                <!-- Left Nav -->
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" style="visibility: hidden;" href="/">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Tin tức</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Thông cáo báo chí</a></li>
-                </ul>
 
-                <!-- Center Logo -->
-                <div class="nav-center-logo logo">
-                    <img src="img/logo.png" alt="logo">
-                </div>
-
-                <!-- Right Nav -->
-                <ul class="nav ms-auto">
-                    <!-- <li class="nav-item"><a class="nav-link" href="#">Doanh nghiệp - Gian hàng</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#">Ảnh - Video</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Doanh nghiệp - Gian hàng</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"></a></li>
-                    <li class="nav-item d-flex" style="gap: 8px;visibility: hidden;">
-                        <a class="nav-link" href="#">Chia sẻ</a>
-                        <a href="#" data-atc="sharefb" data-url="https://tuoitre.vn/tuoi-tre-50-nam.htm" rel="nofollow"
-                            title="Chia sẻ" class="icon">
-                            <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="1" width="39" height="39" rx="19.5" fill="#F5F5F5"></rect>
-                                <rect x="0.5" y="1" width="39" height="39" rx="19.5" stroke="#D9D9D9"></rect>
-                                <path
-                                    d="M21.1047 21.542H23.5862L23.9758 19.0059H21.1042V17.6197C21.1042 16.5662 21.4464 15.6319 22.4259 15.6319H24V13.4187C23.7234 13.3811 23.1385 13.2988 22.0333 13.2988C19.7255 13.2988 18.3724 14.525 18.3724 17.3186V19.0059H16V21.542H18.3724V28.5128C18.8423 28.5839 19.3182 28.6322 19.8067 28.6322C20.2483 28.6322 20.6793 28.5915 21.1047 28.5337V21.542Z"
-                                    fill="#937651"></path>
-                            </svg>
-                        </a>
-                        <a href="#" rel="nofollow" data-atc="copylink" data-url="https://tuoitre.vn/tuoi-tre-50-nam.htm"
-                            title="Copy link" class="icon">
-                            <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="1" width="39" height="39" rx="19.5" fill="#F5F5F5"></rect>
-                                <rect x="0.5" y="1" width="39" height="39" rx="19.5" stroke="#D9D9D9"></rect>
-                                <path
-                                    d="M19.8891 24.5572C19.2292 25.2651 18.5985 26.1088 17.8028 26.7585C16.357 27.9415 14.1835 27.6894 12.9414 26.3027C11.6703 24.8772 11.68 22.7535 13.0094 21.3766C14.329 20.019 15.6584 18.6808 17.0169 17.3716C18.3851 16.0431 20.578 16.0431 21.9365 17.3329C22.3926 17.7595 22.4508 18.2444 22.1112 18.6614C21.7521 19.0977 21.2573 19.1074 20.743 18.7002C19.8697 17.9729 18.9284 18.0117 18.1231 18.8165C16.9004 20.0384 15.6778 21.2602 14.4552 22.482C13.6498 23.2966 13.611 24.4118 14.3581 25.1584C15.1053 25.9051 16.2406 25.876 17.0266 25.0421C17.5117 24.5281 17.9387 24.1208 18.7344 24.4699C19.0934 24.6348 19.5689 24.5378 19.8891 24.5572Z"
-                                    fill="#937651"></path>
-                                <path
-                                    d="M19.1809 15.4613C19.831 14.7534 20.4617 13.8612 21.2865 13.2115C22.742 12.0576 24.8865 12.3582 26.0994 13.7449C27.3415 15.1607 27.3221 17.2746 26.0121 18.6322C24.6827 19.9995 23.3437 21.3474 21.9658 22.6759C20.617 23.9753 18.424 23.9656 17.085 22.6953C16.6095 22.2493 16.5513 21.745 16.9297 21.3377C17.2984 20.9304 17.7642 20.9304 18.2591 21.3183C19.1809 22.0553 20.093 22.0068 20.9372 21.1632C22.1501 19.951 23.3631 18.7486 24.5663 17.5365C25.3717 16.7219 25.4202 15.6164 24.673 14.86C23.9356 14.1134 22.7809 14.1231 22.0046 14.957C21.5 15.5098 21.0343 15.8492 20.2483 15.5195C19.8892 15.3934 19.4429 15.471 19.1809 15.4613Z"
-                                    fill="#937651"></path>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-    <div class="header_mobile">
-        <!-- Mobile logo -->
-        <div class="mobile-logo container d-lg-none">
-            <img src="img/logo.png" alt="logo">
-        </div>
-        <!-- Nút menu mobile (3 gạch) -->
-        <div class="mobile-menu-toggle d-lg-none">
-            <i class="fa-solid fa-bars"></i>
+<!-- Overlay -->
+<div class="overlay"></div>
+<header>
+    <div class="header-inner container d-flex align-items-center justify-content-between">
+        <!-- Menu trái -->
+        <div class="nav-left d-flex align-items-center menu_left">
+            <nav aria-label="Main navigation">
+                <a href="index.html">Trang chủ</a>
+                <a href="gioithieu.html">Giới thiệu</a>
+                <a href="service.html">Dịch vụ</a>
+            </nav>
         </div>
 
-    </div>
-
-
-
-    <!-- Menu mobile dạng popup -->
-    <div class="mobile-menu-overlay"></div>
-    <nav class="mobile-menu d-lg-none">
-        <div class="mobile-menu-header">
-            <span class="close-menu">&times;</span>
-        </div>
-        <ul class="mobile-nav">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Thông cáo báo chí</a></li>
-            <li><a href="#">Ảnh - Video</a></li>
-            <li><a href="#">Doanh nghiệp gian hàng</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div class="content-wrapper position-relative">
-            <article>
-                <div class="share-sticky-bar">
-                    <a href="#" class="facebook" title="Chia sẻ lên Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="twitter" title="Chia sẻ lên Twitter/X"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="pinterest" title="Chia sẻ lên Pinterest"><i class="fab fa-pinterest"></i></a>
-                    <a href="#" class="link" id="copyLinkButton" title="Sao chép đường dẫn"><i
-                            class="fas fa-link"></i></a>
-                </div>
-
-                <header class="article-header">
-                    <span class="category">“Đại Tiệc Nướng & Bia</span>
-                    <h1>Khai mạc “CHEER FEST – Đại Tiệc Nướng & Bia Quốc Tế” tại Hội Chợ Mùa Thu 2025</h1>
-
-                    <div class="article-meta">
-                        <div class="author-info">
-                            <img src="img/icon_avatar.avif" alt="Tác giả">
-                            <span>Tác giả: **Ban Truyền Thông Hội Chợ Mùa Thu**</span>
-                        </div>
-                        <span>Đăng ngày: 15/10/2025</span>
-                        <span>Thời gian đọc: 4 phút</span>
-                    </div>
-                </header>
-
-                <img src="img/san-khau.png" alt="Ảnh nổi bật"
-                    class="featured-image">
-
-                <div class="article-content">
-                    <p><strong>Chúng ta thường nghĩ thành công là kết quả của những nỗ lực phi thường hoặc may mắn. Tuy
-                            nhiên, theo các nghiên cứu, những người thành công nhất đều có chung một vài thói quen đơn
-                            giản, được thực hiện đều đặn mỗi ngày.</strong></p>
-
-                    <p>Bài viết này sẽ đi sâu vào 7 thói quen cốt lõi mà bất kỳ ai cũng có thể áp dụng để cải thiện đáng
-                        kể chất lượng cuộc sống và công việc của mình. Bắt đầu từ ngày mai, bạn hoàn toàn có thể thay
-                        đổi quỹ đạo phát triển cá nhân của mình.</p>
-
-                    <h2>1. Dậy sớm và Chiến thắng Buổi sáng</h2>
-                    <p>Không chỉ là việc thức dậy trước bình minh, thói quen này còn là việc giành quyền kiểm soát buổi
-                        sáng của bạn trước khi thế giới bên ngoài bắt đầu đòi hỏi sự chú ý của bạn. Hãy dành 30-60 phút
-                        đầu tiên cho bản thân: thiền, tập thể dục nhẹ, hoặc lên kế hoạch cho ngày mới.</p>
-
-                    <blockquote>
-                        "Kỷ luật là cầu nối giữa mục tiêu và thành tựu."
-                        <cite>— Jim Rohn</cite>
-                    </blockquote>
-
-                    <h2>2. Nguyên tắc 'Hai phút'</h2>
-                    <p>Nếu một nhiệm vụ có thể hoàn thành trong vòng hai phút (như rửa cốc, trả lời email ngắn), hãy làm
-                        nó ngay lập tức. Thói quen này giúp bạn loại bỏ sự trì hoãn và giảm tải tinh thần khỏi các nhiệm
-                        vụ nhỏ tích tụ.</p>
-
-                    <p>Thói quen này không chỉ áp dụng cho công việc mà còn cho cả đời sống cá nhân. Nó giúp xây dựng sự
-                        nhạy bén và kỷ luật cá nhân. Bạn sẽ thấy mình ít căng thẳng hơn và có nhiều năng lượng hơn cho
-                        những nhiệm vụ lớn.</p>
-
-                    <h2>3. Học tập Liên tục</h2>
-                    <p>Dù chỉ là 15 phút đọc sách mỗi ngày hoặc nghe podcast trên đường đi làm, việc tiếp thu kiến thức
-                        mới là chìa khóa. Những người thành công không bao giờ dừng lại việc học. Họ coi việc nâng cao
-                        bản thân là một khoản đầu tư không bao giờ lỗ.</p>
-
-                    <h2>4. Viết nhật ký/Ghi chép</h2>
-                    <p>Việc viết lách giúp sắp xếp suy nghĩ, theo dõi tiến trình và giải quyết cảm xúc. Dù là nhật ký cá
-                        nhân hay danh sách "cần làm", việc đưa suy nghĩ ra khỏi đầu và lên giấy (hoặc màn hình) sẽ giúp
-                        giải phóng năng lượng tinh thần đáng kể.</p>
-
-                    <p><strong>Kết luận:</strong> Thành công không đến từ phép màu, mà đến từ sự lặp lại của những thói
-                        quen tốt. Hãy chọn một trong 7 thói quen này và cam kết thực hiện nó trong 30 ngày. Bạn sẽ thấy
-                        sự khác biệt rõ rệt.</p>
-                </div>
-
-            </article>
-
-            <section class="grid-articles">
-                <h2>Các Bài Viết Khác</h2>
-                <div class="article-grid">
-
-                    <article class="grid-card">
-                        <img src="img/san-khau.png" alt="Bài viết 3">
-                        <div class="card-info">
-                            <span class="category-tag">Làm Đẹp</span>
-                            <h3><a href="#">Bí mật của một làn da căng bóng chuẩn Hàn Quốc</a></h3>
-                            <span class="meta-date">15/10/2025</span>
-                        </div>
-                    </article>
-
-                    <article class="grid-card">
-                        <img src="img/san-khau.png" alt="Bài viết 4">
-                        <div class="card-info">
-                            <span class="category-tag">Phụ Kiện</span>
-                            <h3><a href="#">Đồng hồ thông minh - Lựa chọn nào phù hợp với bạn?</a></h3>
-                            <span class="meta-date">14/10/2025</span>
-                        </div>
-                    </article>
-
-                    <article class="grid-card">
-                        <img src="img/san-khau.png" alt="Bài viết 5">
-                        <div class="card-info">
-                            <span class="category-tag">Ẩm Thực</span>
-                            <h3><a href="#">Công thức làm bánh mì Sourdough tại nhà cho người mới</a></h3>
-                            <span class="meta-date">14/10/2025</span>
-                        </div>
-                    </article>
-
-                    <article class="grid-card hidden-article">
-                        <img src="img/san-khau.png" alt="Tin 6">
-                        <div class="card-info">
-                            <span class="category-tag">Công Nghệ</span>
-                            <h3><a href="#">Thử nghiệm chip AI mới nhất: Hiệu năng vượt trội</a></h3>
-                            <span class="meta-date">13/10/2025</span>
-                        </div>
-                    </article>
-
-                    <article class="grid-card hidden-article">
-                        <img src="img/san-khau.png" alt="Tin 7">
-                        <div class="card-info">
-                            <span class="category-tag">Văn Hóa</span>
-                            <h3><a href="#">Lễ hội truyền thống của dân tộc H'Mông thu hút khách du lịch</a></h3>
-                            <span class="meta-date">13/10/2025</span>
-                        </div>
-                    </article>
-
-                    <article class="grid-card hidden-article">
-                        <img src="img/san-khau.png" alt="Tin 8">
-                        <div class="card-info">
-                            <span class="category-tag">Kinh Tế</span>
-                            <h3><a href="#">Phân tích tác động của lãi suất ngân hàng đến thị trường bất động sản</a>
-                            </h3>
-                            <span class="meta-date">12/10/2025</span>
-                        </div>
-                    </article>
-
-                    <article class="grid-card hidden-article">
-                        <img src="img/san-khau.png" alt="Tin 9">
-                        <div class="card-info">
-                            <span class="category-tag">Sức Khỏe</span>
-                            <h3><a href="#">Các bài tập đơn giản giúp cải thiện chất lượng giấc ngủ</a></h3>
-                            <span class="meta-date">11/10/2025</span>
-                        </div>
-                    </article>
-
-                    <article class="grid-card hidden-article">
-                        <img src="img/san-khau.png" alt="Tin 10">
-                        <div class="card-info">
-                            <span class="category-tag">Du Lịch</span>
-                            <h3><a href="#">Khám phá 3 hòn đảo thiên đường ít người biết ở Việt Nam</a></h3>
-                            <span class="meta-date">10/10/2025</span>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-
-            <div class="load-more-btn">
-                <button id="loadMoreButton">Tải thêm bài viết</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="overlay-pattern"></div>
-        <div class="container">
-            <div class="footer__middle">
-                <a href="/" title="Tuổi trẻ Online" class="logotto">
-                    <img src="img/logo.png" alt="">
-                </a>
-
-                <a href="/tuoi-tre-50-nam.htm" title="Tuổi trẻ Online" class="item-logo">
-                    <img src="img/logo.png" alt="">
-                </a>
-
-                <p class="des">
-                    Sự kiện thuộc khuôn khổ <strong>Hội Chợ Mùa Thu 2025</strong>
-                    <br>
-                    Chủ đề: <em>CHEER FEST – Đại Tiệc Nướng & Bia Quốc Tế</em>
-                    <br>
-                    Đơn vị tổ chức: Báo Tuổi Trẻ – Trung tâm Hội chợ & Triển lãm
-                </p>
-
-                <div class="box-des">
-                    <p class="sapo">
-                        Địa điểm tổ chức: Công viên 23/9, Quận 1, TP. Hồ Chí Minh
-                        <br>
-                        Thời gian: 10 – 15 tháng 11 năm 2025
-                        <br>
-                        Hotline: 028.38.433.826 – Email: info@cheerfest.vn
-                    </p>
-
-                    <p class="sapodes">
-                        <a href="#register">Đăng ký tham dự</a> |
-                        <a href="#gallery">Xem lại hình ảnh</a> |
-                        <a href="#contact">Liên hệ hợp tác</a>
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div id="back-to-top" class="show">
-            <a href="javascript:;" rel="nofollow" title="" class="layout__sticky-icon">
-                <span class="icon">
-                    <svg width="19" height="22" viewBox="0 0 19 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.37373 9.70711C1.98321 10.0976 1.35004 10.0976 0.959519 9.70711C0.568995 9.31658 0.568995 8.68342 0.959519 8.29289L2.37373 9.70711ZM9.66663 1L8.95952 0.292893C9.35004 -0.0976308 9.98321 -0.0976307 10.3737 0.292894L9.66663 1ZM18.3737 8.29289C18.7643 8.68342 18.7643 9.31658 18.3737 9.70711C17.9832 10.0976 17.35 10.0976 16.9595 9.70711L18.3737 8.29289ZM10.6666 21C10.6666 21.5523 10.2189 22 9.66663 22C9.11434 22 8.66663 21.5523 8.66663 21L10.6666 21ZM0.959519 8.29289L8.95952 0.292893L10.3737 1.70711L2.37373 9.70711L0.959519 8.29289ZM10.3737 0.292894L18.3737 8.29289L16.9595 9.70711L8.95952 1.70711L10.3737 0.292894ZM10.6666 1L10.6666 21L8.66663 21L8.66663 1L10.6666 1Z"
-                            fill="#222222"></path>
-                    </svg>
-
-                </span>
+        <!-- Logo ở giữa -->
+        <div class="logo mx-auto">
+            <a href="index.html">
+                <img src="img/Logo.png" alt="Kingwood">
             </a>
+
         </div>
-    </footer>
+
+        <!-- Menu phải + ngôn ngữ -->
+        <div class="nav-right d-flex align-items-center menu_right">
+            <nav aria-label="Main navigation">
+                <a href="category.html" class="btn-active">Sản phẩm</a>
+                <a href="news.html">Tin tức</a>
+                <a href="contact.html">Liên hệ</a>
+            </nav>
+            <div class="lang ms-3 d-flex align-items-center">
+                <div class="flag">VN</div>
+                <div style="width:8px"></div>
+                <a class="btn-secondary" href="#">EN</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="service.html">Dịch vụ</a></li>
+            <li><a href="category.html">Sản phẩm</a></li>
+            <li><a href="news.html">Tin tức</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+            <div class="lang ms-3 d-flex align-items-center">
+                <div class="flag">VN</div>
+                <div style="width:8px"></div>
+                <a class="btn-secondary" href="#">EN</a>
+            </div>
+        </ul>
+    </div>
+
+</header>
+
+<main>
+    <!-- hero -->
+    <section class="banner_home category container">
+        <div class="hero-row">
+            <div class="hero-left">
+                <h1 class="eyebrow_sp">Sản phẩm <span class="eyebrow">của KingWood</span></h1>
+                <p class="hero-sub">OEM/ODM thớt, đũa, tô/chén/khay… xuất khẩu Mỹ, Nhật, Đài Loan, Trung Quốc.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="product-details">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb-nav mb-3">
+                <a href="#">Trang chủ</a> /
+                <a href="#">Sản phẩm</a> /
+                <span>Thớt gỗ Kingwood</span>
+            </nav>
+        </div>
+
+        <div class="container product-detail">
+            <!-- GALLERY -->
+            <div class="product-gallery">
+                <div class="slider-for">
+                    <div><img src="img/Main%20Thumb.png" alt=""></div>
+                    <div><img src="img/service1.png" alt=""></div>
+                    <div><img src="img/Main%20Thumb.png" alt=""></div>
+                    <div><img src="img/service1.png" alt=""></div>
+                </div>
+                <div class="slider-nav">
+                    <div><img src="img/service1.png" alt=""></div>
+                    <div><img src="img/service1.png" alt=""></div>
+                    <div><img src="img/service1.png" alt=""></div>
+                    <div><img src="img/service1.png" alt=""></div>
+                </div>
+            </div>
+
+            <!-- INFO -->
+            <div class="product-info">
+                <h2>Thớt Gỗ KingWood</h2>
+                <p><strong>Chất liệu:</strong> Gỗ tự nhiên cao cấp &nbsp; | &nbsp; <strong>Loại:</strong> Hình chữ nhật</p>
+                <p>An toàn & Bền bỉ: Được làm từ 100% gỗ tự nhiên, không độc hại, chịu lực tốt, giúp bạn an tâm khi sử dụng
+                    thực phẩm.</p>
+                <p>Thiết kế Tinh tế: Vân gỗ đẹp mắt, tạo điểm nhấn sang trọng cho căn bếp.</p>
+                <p>Vệ sinh Dễ dàng: Bề mặt nhẵn mịn, dễ lau chùi, hạn chế bám mùi thực phẩm.</p>
+                <p><strong>Sử dụng lý tưởng cho:</strong> Cắt, thái, băm thực phẩm hoặc dùng làm khay trang trí, bày biện đồ
+                    ăn.</p>
+
+                <p><strong>Số điện thoại:</strong> 0978337284</p>
+
+                <button class="btn-contact">Liên hệ ngay</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <div class="product-features">
+        <div class="feature-item">
+            <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="88" height="88" rx="44" fill="#2A6F2B"/>
+                <path d="M20 62V58.0135C20 58.0135 32 54.027 44 54.027C56 54.027 68 58.0135 68 58.0135V62H20ZM42.32 36.2871C39.44 28.5134 24.8 30.3073 24.8 30.3073C24.8 30.3073 25.28 45.8547 38.96 43.4628C38 37.6824 34.4 36.0878 34.4 36.0878C41.12 36.0878 41.6 42.8648 41.6 42.8648V52.0338H46.4V43.6621C46.4 43.6621 46.4 35.8884 53.6 33.8952C53.6 33.8952 48.8 39.8749 48.8 43.8614C65.6 45.2567 65.6 26.1215 65.6 26.1215C65.6 26.1215 44.24 24.1283 42.32 36.2871Z" fill="#FDF5E6"/>
+            </svg>
+            <p>Organic</p>
+        </div>
+        <div class="feature-item">
+            <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="88" height="88" rx="44" fill="#2A6F2B"/>
+                <path d="M20 62V58.0135C20 58.0135 32 54.027 44 54.027C56 54.027 68 58.0135 68 58.0135V62H20ZM42.32 36.2871C39.44 28.5134 24.8 30.3073 24.8 30.3073C24.8 30.3073 25.28 45.8547 38.96 43.4628C38 37.6824 34.4 36.0878 34.4 36.0878C41.12 36.0878 41.6 42.8648 41.6 42.8648V52.0338H46.4V43.6621C46.4 43.6621 46.4 35.8884 53.6 33.8952C53.6 33.8952 48.8 39.8749 48.8 43.8614C65.6 45.2567 65.6 26.1215 65.6 26.1215C65.6 26.1215 44.24 24.1283 42.32 36.2871Z" fill="#FDF5E6"/>
+            </svg>
+
+            <p>Có thể tái chế</p>
+        </div>
+        <div class="feature-item">
+            <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="88" height="88" rx="44" fill="#2A6F2B"/>
+                <path d="M20 62V58.0135C20 58.0135 32 54.027 44 54.027C56 54.027 68 58.0135 68 58.0135V62H20ZM42.32 36.2871C39.44 28.5134 24.8 30.3073 24.8 30.3073C24.8 30.3073 25.28 45.8547 38.96 43.4628C38 37.6824 34.4 36.0878 34.4 36.0878C41.12 36.0878 41.6 42.8648 41.6 42.8648V52.0338H46.4V43.6621C46.4 43.6621 46.4 35.8884 53.6 33.8952C53.6 33.8952 48.8 39.8749 48.8 43.8614C65.6 45.2567 65.6 26.1215 65.6 26.1215C65.6 26.1215 44.24 24.1283 42.32 36.2871Z" fill="#FDF5E6"/>
+            </svg>
+
+            <p>Không chất độc hại</p>
+        </div>
+        <div class="feature-item">
+            <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="88" height="88" rx="44" fill="#2A6F2B"/>
+                <path d="M20 62V58.0135C20 58.0135 32 54.027 44 54.027C56 54.027 68 58.0135 68 58.0135V62H20ZM42.32 36.2871C39.44 28.5134 24.8 30.3073 24.8 30.3073C24.8 30.3073 25.28 45.8547 38.96 43.4628C38 37.6824 34.4 36.0878 34.4 36.0878C41.12 36.0878 41.6 42.8648 41.6 42.8648V52.0338H46.4V43.6621C46.4 43.6621 46.4 35.8884 53.6 33.8952C53.6 33.8952 48.8 39.8749 48.8 43.8614C65.6 45.2567 65.6 26.1215 65.6 26.1215C65.6 26.1215 44.24 24.1283 42.32 36.2871Z" fill="#FDF5E6"/>
+            </svg>
+
+            <p>Nguyên liệu từ rừng trồng</p>
+        </div>
+    </div>
+
+    <section class="intro-product">
+        <div class="container">
+            <div class="intro-box">
+                <div class="intro-text">
+                    <div class="intro-title">
+                        <span>Giới thiệu về sản phẩm</span>
+                    </div>
+                    <h2>Thớt gỗ <span>KINGWOOD</span></h2>
+                    <p>Thớt gỗ KINGWOOD là sự lựa chọn hàng đầu cho căn bếp hiện đại, được chế tác từ gỗ tự nhiên cao cấp 100%, đảm bảo độ an toàn tuyệt đối và bền bỉ vượt trội khi sơ chế mọi loại thực phẩm.</p>
+
+                    <p>Với nhiều kiểu dáng đa dạng như hình chữ nhật, hình tròn và hình quả táo, thớt không chỉ chịu lực tốt, hạn chế cong vênh, mà còn sở hữu vân gỗ đẹp mắt, dễ dàng vệ sinh và ít bám mùi.</p>
+
+                    <p>KINGWOOD không chỉ là một công cụ cắt thái hiệu quả mà còn có thể dùng làm khay trang trí sang trọng, nâng tầm thẩm mỹ cho không gian bếp và bàn ăn của bạn.</p>
+                </div>
+
+                <div class="intro-image">
+                    <img src="img/Main%20Thumb.png" alt="Thớt gỗ KingWood">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related" style="padding:30px 0; background: #fff;">
+        <div class="container">
+            <h4>Các sản phẩm tương tự </h4>
+            <p class="pra">Nhận gia công theo thiết kế, kích thước và thương hiệu riêng
+                cho doanh nghiệp trong nước và xuất khẩu</p>
+
+            <div class="col-md-12">
+                <div class="row g-4">
+
+                    <!-- Product Item -->
+                    <div class="col-md-4 col-6">
+                        <div class="product-card">
+                            <img src="img/service1.png" class="anh_chi_tiet">
+                            <h5 class="mt-3">Thớt tròn Kingwood</h5>
+                            <p>Chất liệu: <b>Gỗ Mun</b></p>
+                            <p>Kiểu dáng: <b>Hình tròn</b></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                        <div class="product-card">
+                            <img src="img/service1.png" class="anh_chi_tiet">
+                            <h5 class="mt-3">Thớt gỗ đỏ Kingwood</h5>
+                            <p>Chất liệu: <b>Gỗ mun đỏ</b></p>
+                            <p>Kiểu dáng: <b>Hình chữ nhật</b></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                        <div class="product-card">
+                            <img src="img/service1.png" class="anh_chi_tiet">
+                            <h5 class="mt-3">Thớt gỗ đỏ Kingwood</h5>
+                            <p>Chất liệu: <b>Gỗ mun đỏ</b></p>
+                            <p>Kiểu dáng: <b>Hình chữ nhật</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
 
+    <!-- contact -->
+    <section id="lienhe" style="padding:30px 0; background: #fff;">
+        <div class="container">
+            <h4>Liên hệ nhà phân phối của <span style="color: #EC9907;">Kingwood</span></h4>
+            <p class="pra">Đơn vị chịu trách nhiệm phân phối trực tiếp</p>
+            <div class="contact">
+                <div class="info">
+                    <img src="img/Logo2.png" alt="">
+                    <p style="color:#2A6F2B;margin-top:8px;font-weight: 700;margin-bottom: 10px;">
+                        CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN </p>
+                    <p style="color: #696969; font-size: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M6.4149 19.5133V11.7017L4.02447 13.5372L3 12.1713L12.391 5L15.8059 7.60386V5.85372H18.367V9.56743L21.7819 12.1713L20.7575 13.5372L18.367 11.7017V19.5133H14.0984V14.391H10.6835V19.5133H6.4149ZM10.6835 10.9974H14.0984C14.0984 10.5421 13.9277 10.1685 13.5862 9.87648C13.2447 9.5845 12.8463 9.4388 12.391 9.43937C11.9357 9.43994 11.5372 9.58593 11.1958 9.87733C10.8543 10.1687 10.6835 10.5421 10.6835 10.9974Z"
+                                    fill="#2A6F2B"/>
+                        </svg>
+                        231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh
+                        <br>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M7.09048 10.6505C8.31985 13.0666 10.3005 15.0387 12.7165 16.2766L14.5947 14.3984C14.8252 14.1679 15.1667 14.091 15.4655 14.1935C16.4217 14.5094 17.4547 14.6801 18.5133 14.6801C18.9829 14.6801 19.367 15.0643 19.367 15.5338V18.5133C19.367 18.9829 18.9829 19.367 18.5133 19.367C10.4968 19.367 4 12.8702 4 4.85372C4 4.38418 4.38418 4 4.85372 4H7.84176C8.31131 4 8.69549 4.38418 8.69549 4.85372C8.69549 5.92088 8.86623 6.94535 9.18211 7.90152C9.27602 8.20033 9.20772 8.53328 8.96868 8.77232L7.09048 10.6505Z"
+                                    fill="#2A6F2B"/>
+                        </svg>
+                        0962.963.238
+                        <br>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M18.367 5H4.70745C3.76835 5 3.00854 5.76835 3.00854 6.70745L3 16.9521C3 17.8912 3.76835 18.6596 4.70745 18.6596H18.367C19.3061 18.6596 20.0745 17.8912 20.0745 16.9521V6.70745C20.0745 5.76835 19.3061 5 18.367 5ZM18.367 8.4149L11.5372 12.6835L4.70745 8.4149V6.70745L11.5372 10.9761L18.367 6.70745V8.4149Z"
+                                    fill="#2A6F2B"/>
+                        </svg>
+
+                        info@kingwoodfactory.com
+                    </p>
+                </div>
+                <form class="form" id="contactForm" style="flex:1; text-align: center;">
+                    <div style="width: 100%; display: flex;gap: 15px;">
+                        <input style="width: 50%;" type="text" name="name" placeholder="Họ Và Tên" required>
+                        <input style="width: 50%;" type="text" placeholder="Số điện thoại" name="phone">
+                    </div>
+                    <input type="email" placeholder="Email" name="email">
+                    <textarea name="message" placeholder="Nội dung liên hệ" rows="5"></textarea>
+                    <button type="submit">Gửi</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
 
 
+</main>
 
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <!-- Cột 1 -->
+            <div class="footer-col">
+                <img src="img/Logo.png" alt="Kingwood" class="footer-logo">
+                <p class="company-name">CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN</p>
+                <p class="info">
+                    <i class="bi bi-geo-alt"></i> 231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh<br>
+                    <i class="bi bi-telephone"></i> 0962.963.238<br>
+                    <i class="bi bi-envelope"></i> info@kingwoodfactory.com
+                </p>
+            </div>
 
+            <!-- Cột 2 -->
+            <div class="footer-col">
+                <ul class="footer-menu">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Dịch vụ</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
 
+            <!-- Cột 3 -->
+            <div class="footer-col">
+                <h5 class="footer-title">Mạng xã hội</h5>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
 
+                <h5 class="footer-title mt-3">Liên hệ với Kingwood qua Email</h5>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit">Gửi</button>
+                </form>
+            </div>
+        </div>
 
+        <div class="footer-bottom">
+            <p>©2025 - CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản dịch vụ</a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
-<script>
-    $(document).ready(function () {
-        // Số lượng bài viết sẽ hiển thị mỗi lần click
-        var articlesToShow = 3;
 
-        // Lấy tất cả các bài viết đang bị ẩn (class hidden-article)
-        var hiddenArticles = $('.hidden-article');
-
-        // Ẩn nút nếu không còn bài viết nào để tải (tức là không có class hidden-article)
-        if (hiddenArticles.length === 0) {
-            $('#loadMoreButton').hide();
-        }
-
-        $('#loadMoreButton').on('click', function (e) {
-            e.preventDefault();
-
-            // Lấy 3 bài viết tiếp theo cần hiển thị
-            var articlesToLoad = hiddenArticles.slice(0, articlesToShow);
-
-            if (articlesToLoad.length > 0) {
-                // Hiển thị các bài viết và loại bỏ class ẩn
-                articlesToLoad.removeClass('hidden-article').hide().fadeIn(600);
-
-                // Cập nhật lại danh sách bài viết ẩn sau khi đã hiển thị
-                hiddenArticles = $('.hidden-article');
-
-                // Ẩn nút nếu đã hiển thị hết
-                if (hiddenArticles.length === 0) {
-                    $('#loadMoreButton')
-                        .text('Đã tải hết bài viết')
-                        .prop('disabled', true)
-                        .css('background-color', '#999'); // Đổi màu để làm dấu hiệu
-                }
-            }
-        });
-
-
-
-
-    });
-</script>
+</html>
