@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kingwood - Dịch vụ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jQuery (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <style>
+        .service-card {
+            border: 1px solid #828492;
+            border-radius: 12px;
+            padding: 20px;
+            transition: .3s;
+            text-align: center;
+            background: #fff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .tag {
+            position: absolute;
+            color: #fff;
+            padding: 4px 12px;
+            font-size: 12px;
+            border-radius: 20px;
+            top: 10px;
+            left: 10px;
+        }
+
+        .service h3 {
+            color: #2A6F2B;
+            font-size: 30px;
+        }
+
+        section.service {
+            background: #fff;
+        }
+
+        /* Background section */
+        .section-process {
+            padding: 70px 0 90px;
+        }
+
+        /* center title spacing */
+        .section-process h3 {
+            font-size: 26px;
+        }
+
+
+        .process-item {
+            text-align: center;
+            position: relative;
+        }
+
+        /* icon circle */
+        .process-icon {
+            width: 85px;
+            height: 85px;
+            background: #2d7c3f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            color: #fff;
+            margin: 0 auto 15px;
+        }
+
+        /* dotted connector line */
+        .process-item::after {
+            content: "";
+            position: absolute;
+            top: 30%;
+            right: -35px;
+            width: 60px;
+            height: 2px;
+            border-top: 4px dotted #9a9a9a;
+            transform: translateY(-50%);
+        }
+
+        /* remove line on last item */
+        .process-item:last-child::after {
+            display: none;
+        }
+
+        /* responsive: hide dotted line */
+        @media (max-width: 992px) {
+            .process-item::after {
+                display: none;
+            }
+        }
+
+        /* small screen icon adjust */
+        @media (max-width: 576px) {
+            .process-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 26px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+        <!-- Overlay -->
+    <div class="overlay"></div>
+    <header>
+        <div class="header-inner container d-flex align-items-center justify-content-between">
+            <!-- Menu trái -->
+            <div class="nav-left d-flex align-items-center menu_left">
+                <nav aria-label="Main navigation">
+                    <a href="#" >Trang chủ</a>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#" class="btn-active">Dịch vụ</a>
+                </nav>
+            </div>
+
+            <!-- Logo ở giữa -->
+            <div class="logo mx-auto">
+                <img src="img/Logo.png" alt="Kingwood">
+            </div>
+
+            <!-- Menu phải + ngôn ngữ -->
+            <div class="nav-right d-flex align-items-center menu_right">
+                <nav aria-label="Main navigation">
+                    <a href="#">Sản phẩm</a>
+                    <a href="#">Tin tức</a>
+                    <a href="#">Liên hệ</a>
+                </nav>
+                <div class="lang ms-3 d-flex align-items-center">
+                    <div class="flag">VN</div>
+                    <div style="width:8px"></div>
+                    <a class="btn-secondary" href="#">EN</a>
+                </div>
+            </div>
+        </div>
+             <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                 <div class="lang ms-3 d-flex align-items-center">
+                    <div class="flag">VN</div>
+                    <div style="width:8px"></div>
+                    <a class="btn-secondary" href="#">EN</a>
+                </div>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- hero -->
+        <section class="banner_home container">
+            <div class="hero-row">
+                <div class="hero-left">
+                    <h1 class="eyebrow">Dịch vụ gia công & <span class="eyebrow_sp">sản xuất
+                            sản phẩm gỗ theo yêu cầu</span></h1>
+                    <p class="hero-sub">OEM/ODM thớt, đũa, tô/chén/khay… xuất khẩu Mỹ, Nhật, Đài Loan, Trung Quốc.</p>
+                    <div class="hero-ctas">
+                        <a class="btn-primary" href="#nangluc">Xem năng lực sản xuất</a>
+                        <a class="btn-secondary" href="#lienhe">Liên hệ và báo giá</a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="product-hero">
+                        <img src="img/banner_gioithieu.png" alt="Sản phẩm gỗ">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="service">
+            <div class="container py-5">
+                <h3 class="text-center fw-bold mb-2">Dịch vụ của <span class="text-warning">Kingwood</span></h3>
+                <p class="text-center text-muted mb-5">
+                    Nhận gia công theo thiết kế, kích thước và thương hiệu riêng cho doanh nghiệp trong nước và xuất
+                    khẩu
+                </p>
+
+                <div class="row g-4">
+
+                    <!-- Card item -->
+                    <div class="col-md-4">
+                        <div class="service-card position-relative">
+                            <span class="tag"><svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="45" height="45" rx="22.5" fill="#2A6F2B" />
+                                    <path
+                                        d="M22.9634 14.0041L13.1736 26.5254H14.8923L18.1823 21.9636L18.8151 22.4276L15.8546 26.5254H17.0466L18.269 25.1945L18.1996 26.5254H23.2625L31.741 14.0041H29.5477L23.0457 23.6316L22.4042 23.185L28.6071 14.0041H27.0943L25.0223 16.9158L24.3895 16.4518L26.132 14.0041H22.9634ZM32.0921 14.8836L23.8563 27.042V28.386L26.8429 23.973L27.4844 24.4196L23.8563 29.7781V31.1922L32.0921 18.3956V17.8834L31.1385 18.1373L32.0921 16.6794V14.8836ZM12.7588 27.3134V32.1291H13.7917L14.2486 30.4611L14.731 32.1291H16.3617C16.2664 31.8795 16.2144 31.6125 16.2144 31.3323C16.2144 30.518 16.6652 29.8 17.337 29.3053C18.0089 28.815 18.9062 28.5261 19.8901 28.5261C20.8741 28.5261 21.7714 28.815 22.4432 29.3053C22.686 29.4848 22.9027 29.695 23.0761 29.927V27.3134H12.7588ZM19.8901 29.3141C19.0579 29.3141 18.3123 29.5636 17.7965 29.9445C17.2763 30.3254 16.9946 30.8113 16.9946 31.3323C16.9946 31.6125 17.077 31.8795 17.233 32.1291H17.9395C17.7965 31.9233 17.7055 31.6869 17.7055 31.4242C17.7055 30.9339 18.0132 30.5312 18.4207 30.2729C18.8238 30.0102 19.344 29.8701 19.9118 29.8701C20.4796 29.8701 20.9998 30.0102 21.4029 30.2729C21.8104 30.5312 22.1181 30.9339 22.1181 31.4242C22.1181 31.6869 22.0271 31.9233 21.8841 32.1291H22.5473C22.7033 31.8795 22.7857 31.6125 22.7857 31.3323C22.7857 30.8113 22.5039 30.3254 21.9838 29.9445C21.4679 29.5636 20.7224 29.3141 19.8901 29.3141ZM19.9118 30.6581C19.4783 30.6581 19.0882 30.7763 18.8368 30.9383C18.5854 31.1003 18.4857 31.271 18.4857 31.4242C18.4857 31.5775 18.5854 31.7482 18.8368 31.9102C18.9799 32.0021 19.1662 32.0809 19.3786 32.1291H20.445C20.6574 32.0809 20.8437 32.0021 20.9868 31.9102C21.2382 31.7482 21.3379 31.5775 21.3379 31.4242C21.3379 31.271 21.2382 31.1003 20.9868 30.9383C20.7354 30.7763 20.3453 30.6581 19.9118 30.6581Z"
+                                        fill="#FDF5E6" />
+                                </svg>
+                            </span>
+                            <img src="img/service1.png" alt="Thớt gỗ">
+                            <h5 class="mt-3 fw-bold">Sản xuất thớt gỗ</h5>
+                            <p>Chúng tôi sản xuất các loại thớt như thớt gỗ nguyên khối, thớt gỗ ghép...</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="service-card position-relative">
+                            <span class="tag"><svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="45" height="45" rx="22.5" fill="#2A6F2B" />
+                                    <path
+                                        d="M22.9634 14.0041L13.1736 26.5254H14.8923L18.1823 21.9636L18.8151 22.4276L15.8546 26.5254H17.0466L18.269 25.1945L18.1996 26.5254H23.2625L31.741 14.0041H29.5477L23.0457 23.6316L22.4042 23.185L28.6071 14.0041H27.0943L25.0223 16.9158L24.3895 16.4518L26.132 14.0041H22.9634ZM32.0921 14.8836L23.8563 27.042V28.386L26.8429 23.973L27.4844 24.4196L23.8563 29.7781V31.1922L32.0921 18.3956V17.8834L31.1385 18.1373L32.0921 16.6794V14.8836ZM12.7588 27.3134V32.1291H13.7917L14.2486 30.4611L14.731 32.1291H16.3617C16.2664 31.8795 16.2144 31.6125 16.2144 31.3323C16.2144 30.518 16.6652 29.8 17.337 29.3053C18.0089 28.815 18.9062 28.5261 19.8901 28.5261C20.8741 28.5261 21.7714 28.815 22.4432 29.3053C22.686 29.4848 22.9027 29.695 23.0761 29.927V27.3134H12.7588ZM19.8901 29.3141C19.0579 29.3141 18.3123 29.5636 17.7965 29.9445C17.2763 30.3254 16.9946 30.8113 16.9946 31.3323C16.9946 31.6125 17.077 31.8795 17.233 32.1291H17.9395C17.7965 31.9233 17.7055 31.6869 17.7055 31.4242C17.7055 30.9339 18.0132 30.5312 18.4207 30.2729C18.8238 30.0102 19.344 29.8701 19.9118 29.8701C20.4796 29.8701 20.9998 30.0102 21.4029 30.2729C21.8104 30.5312 22.1181 30.9339 22.1181 31.4242C22.1181 31.6869 22.0271 31.9233 21.8841 32.1291H22.5473C22.7033 31.8795 22.7857 31.6125 22.7857 31.3323C22.7857 30.8113 22.5039 30.3254 21.9838 29.9445C21.4679 29.5636 20.7224 29.3141 19.8901 29.3141ZM19.9118 30.6581C19.4783 30.6581 19.0882 30.7763 18.8368 30.9383C18.5854 31.1003 18.4857 31.271 18.4857 31.4242C18.4857 31.5775 18.5854 31.7482 18.8368 31.9102C18.9799 32.0021 19.1662 32.0809 19.3786 32.1291H20.445C20.6574 32.0809 20.8437 32.0021 20.9868 31.9102C21.2382 31.7482 21.3379 31.5775 21.3379 31.4242C21.3379 31.271 21.2382 31.1003 20.9868 30.9383C20.7354 30.7763 20.3453 30.6581 19.9118 30.6581Z"
+                                        fill="#FDF5E6" />
+                                </svg>
+                            </span>
+                            <img src="img/service1.png" alt="Khay đĩa gỗ">
+                            <h5 class="mt-3 fw-bold">Sản xuất khay, đĩa, tô chén gỗ</h5>
+                            <p>Các loại khay, đĩa, tô chén gỗ phù hợp nhiều mục đích khác nhau.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="service-card position-relative">
+                            <span class="tag"><svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="45" height="45" rx="22.5" fill="#2A6F2B" />
+                                    <path
+                                        d="M22.9634 14.0041L13.1736 26.5254H14.8923L18.1823 21.9636L18.8151 22.4276L15.8546 26.5254H17.0466L18.269 25.1945L18.1996 26.5254H23.2625L31.741 14.0041H29.5477L23.0457 23.6316L22.4042 23.185L28.6071 14.0041H27.0943L25.0223 16.9158L24.3895 16.4518L26.132 14.0041H22.9634ZM32.0921 14.8836L23.8563 27.042V28.386L26.8429 23.973L27.4844 24.4196L23.8563 29.7781V31.1922L32.0921 18.3956V17.8834L31.1385 18.1373L32.0921 16.6794V14.8836ZM12.7588 27.3134V32.1291H13.7917L14.2486 30.4611L14.731 32.1291H16.3617C16.2664 31.8795 16.2144 31.6125 16.2144 31.3323C16.2144 30.518 16.6652 29.8 17.337 29.3053C18.0089 28.815 18.9062 28.5261 19.8901 28.5261C20.8741 28.5261 21.7714 28.815 22.4432 29.3053C22.686 29.4848 22.9027 29.695 23.0761 29.927V27.3134H12.7588ZM19.8901 29.3141C19.0579 29.3141 18.3123 29.5636 17.7965 29.9445C17.2763 30.3254 16.9946 30.8113 16.9946 31.3323C16.9946 31.6125 17.077 31.8795 17.233 32.1291H17.9395C17.7965 31.9233 17.7055 31.6869 17.7055 31.4242C17.7055 30.9339 18.0132 30.5312 18.4207 30.2729C18.8238 30.0102 19.344 29.8701 19.9118 29.8701C20.4796 29.8701 20.9998 30.0102 21.4029 30.2729C21.8104 30.5312 22.1181 30.9339 22.1181 31.4242C22.1181 31.6869 22.0271 31.9233 21.8841 32.1291H22.5473C22.7033 31.8795 22.7857 31.6125 22.7857 31.3323C22.7857 30.8113 22.5039 30.3254 21.9838 29.9445C21.4679 29.5636 20.7224 29.3141 19.8901 29.3141ZM19.9118 30.6581C19.4783 30.6581 19.0882 30.7763 18.8368 30.9383C18.5854 31.1003 18.4857 31.271 18.4857 31.4242C18.4857 31.5775 18.5854 31.7482 18.8368 31.9102C18.9799 32.0021 19.1662 32.0809 19.3786 32.1291H20.445C20.6574 32.0809 20.8437 32.0021 20.9868 31.9102C21.2382 31.7482 21.3379 31.5775 21.3379 31.4242C21.3379 31.271 21.2382 31.1003 20.9868 30.9383C20.7354 30.7763 20.3453 30.6581 19.9118 30.6581Z"
+                                        fill="#FDF5E6" />
+                                </svg>
+                            </span>
+                            <img src="img/service1.png" alt="Đũa gỗ">
+                            <h5 class="mt-3 fw-bold">Sản xuất đũa gỗ</h5>
+                            <p>Đũa gỗ cẩm lai, căm xe, trắc... với các kiểu dáng đa dạng.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="service-card position-relative">
+                            <span class="tag"><svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="45" height="45" rx="22.5" fill="#2A6F2B" />
+                                    <path
+                                        d="M22.9634 14.0041L13.1736 26.5254H14.8923L18.1823 21.9636L18.8151 22.4276L15.8546 26.5254H17.0466L18.269 25.1945L18.1996 26.5254H23.2625L31.741 14.0041H29.5477L23.0457 23.6316L22.4042 23.185L28.6071 14.0041H27.0943L25.0223 16.9158L24.3895 16.4518L26.132 14.0041H22.9634ZM32.0921 14.8836L23.8563 27.042V28.386L26.8429 23.973L27.4844 24.4196L23.8563 29.7781V31.1922L32.0921 18.3956V17.8834L31.1385 18.1373L32.0921 16.6794V14.8836ZM12.7588 27.3134V32.1291H13.7917L14.2486 30.4611L14.731 32.1291H16.3617C16.2664 31.8795 16.2144 31.6125 16.2144 31.3323C16.2144 30.518 16.6652 29.8 17.337 29.3053C18.0089 28.815 18.9062 28.5261 19.8901 28.5261C20.8741 28.5261 21.7714 28.815 22.4432 29.3053C22.686 29.4848 22.9027 29.695 23.0761 29.927V27.3134H12.7588ZM19.8901 29.3141C19.0579 29.3141 18.3123 29.5636 17.7965 29.9445C17.2763 30.3254 16.9946 30.8113 16.9946 31.3323C16.9946 31.6125 17.077 31.8795 17.233 32.1291H17.9395C17.7965 31.9233 17.7055 31.6869 17.7055 31.4242C17.7055 30.9339 18.0132 30.5312 18.4207 30.2729C18.8238 30.0102 19.344 29.8701 19.9118 29.8701C20.4796 29.8701 20.9998 30.0102 21.4029 30.2729C21.8104 30.5312 22.1181 30.9339 22.1181 31.4242C22.1181 31.6869 22.0271 31.9233 21.8841 32.1291H22.5473C22.7033 31.8795 22.7857 31.6125 22.7857 31.3323C22.7857 30.8113 22.5039 30.3254 21.9838 29.9445C21.4679 29.5636 20.7224 29.3141 19.8901 29.3141ZM19.9118 30.6581C19.4783 30.6581 19.0882 30.7763 18.8368 30.9383C18.5854 31.1003 18.4857 31.271 18.4857 31.4242C18.4857 31.5775 18.5854 31.7482 18.8368 31.9102C18.9799 32.0021 19.1662 32.0809 19.3786 32.1291H20.445C20.6574 32.0809 20.8437 32.0021 20.9868 31.9102C21.2382 31.7482 21.3379 31.5775 21.3379 31.4242C21.3379 31.271 21.2382 31.1003 20.9868 30.9383C20.7354 30.7763 20.3453 30.6581 19.9118 30.6581Z"
+                                        fill="#FDF5E6" />
+                                </svg>
+                            </span>
+                            <img src="img/service1.png" alt="Muỗng gỗ">
+                            <h5 class="mt-3 fw-bold">Sản xuất muỗng và sạn gỗ</h5>
+                            <p>Các loại muỗng sạn tinh xảo, bền và an toàn cho sức khỏe.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="service-card position-relative">
+                            <span class="tag"><svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="45" height="45" rx="22.5" fill="#2A6F2B" />
+                                    <path
+                                        d="M22.9634 14.0041L13.1736 26.5254H14.8923L18.1823 21.9636L18.8151 22.4276L15.8546 26.5254H17.0466L18.269 25.1945L18.1996 26.5254H23.2625L31.741 14.0041H29.5477L23.0457 23.6316L22.4042 23.185L28.6071 14.0041H27.0943L25.0223 16.9158L24.3895 16.4518L26.132 14.0041H22.9634ZM32.0921 14.8836L23.8563 27.042V28.386L26.8429 23.973L27.4844 24.4196L23.8563 29.7781V31.1922L32.0921 18.3956V17.8834L31.1385 18.1373L32.0921 16.6794V14.8836ZM12.7588 27.3134V32.1291H13.7917L14.2486 30.4611L14.731 32.1291H16.3617C16.2664 31.8795 16.2144 31.6125 16.2144 31.3323C16.2144 30.518 16.6652 29.8 17.337 29.3053C18.0089 28.815 18.9062 28.5261 19.8901 28.5261C20.8741 28.5261 21.7714 28.815 22.4432 29.3053C22.686 29.4848 22.9027 29.695 23.0761 29.927V27.3134H12.7588ZM19.8901 29.3141C19.0579 29.3141 18.3123 29.5636 17.7965 29.9445C17.2763 30.3254 16.9946 30.8113 16.9946 31.3323C16.9946 31.6125 17.077 31.8795 17.233 32.1291H17.9395C17.7965 31.9233 17.7055 31.6869 17.7055 31.4242C17.7055 30.9339 18.0132 30.5312 18.4207 30.2729C18.8238 30.0102 19.344 29.8701 19.9118 29.8701C20.4796 29.8701 20.9998 30.0102 21.4029 30.2729C21.8104 30.5312 22.1181 30.9339 22.1181 31.4242C22.1181 31.6869 22.0271 31.9233 21.8841 32.1291H22.5473C22.7033 31.8795 22.7857 31.6125 22.7857 31.3323C22.7857 30.8113 22.5039 30.3254 21.9838 29.9445C21.4679 29.5636 20.7224 29.3141 19.8901 29.3141ZM19.9118 30.6581C19.4783 30.6581 19.0882 30.7763 18.8368 30.9383C18.5854 31.1003 18.4857 31.271 18.4857 31.4242C18.4857 31.5775 18.5854 31.7482 18.8368 31.9102C18.9799 32.0021 19.1662 32.0809 19.3786 32.1291H20.445C20.6574 32.0809 20.8437 32.0021 20.9868 31.9102C21.2382 31.7482 21.3379 31.5775 21.3379 31.4242C21.3379 31.271 21.2382 31.1003 20.9868 30.9383C20.7354 30.7763 20.3453 30.6581 19.9118 30.6581Z"
+                                        fill="#FDF5E6" />
+                                </svg>
+                            </span>
+                            <img src="img/service1.png" alt="Dụng cụ nhà bếp">
+                            <h5 class="mt-3 fw-bold">Sản xuất dụng cụ nhà bếp bằng gỗ</h5>
+                            <p>Bộ thìa, đũa, muôi gỗ cao cấp, phù hợp quà tặng và gia đình.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-process">
+            <div class="container text-center">
+
+                <h3 class="fw-bold text-success mb-2">
+                    Quy trình làm việc của <span class="text-warning">KINGWOOD</span>
+                </h3>
+
+                <p class="text-muted mb-5">
+                    Nhận gia công theo thiết kế, kích thước và thương hiệu riêng<br>
+                    cho doanh nghiệp trong nước và xuất khẩu
+                </p>
+
+                <div class="row justify-content-center g-4">
+
+                    <div class="col-md-2 process-item">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <p class="fw-semibold">Tiếp nhận thông tin</p>
+                    </div>
+
+                    <div class="col-md-2 process-item">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+                        <p class="fw-semibold">Báo giá</p>
+                    </div>
+
+                    <div class="col-md-2 process-item">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <p class="fw-semibold">Sản xuất hàng mẫu</p>
+                    </div>
+
+                    <div class="col-md-2 process-item">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </div>
+                        <p class="fw-semibold">Kí kết hợp đồng</p>
+                    </div>
+
+                    <div class="col-md-2 process-item">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+                        <p class="fw-semibold">Giao hàng</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- why choose -->
+        <section class="why" style="background: #fff;">
+            <div class="container">
+                   <h4>Tại sao nên chọn <span style="color: #EC9907;">Kingwood</span> </h4>
+            <div class="cards" id="whyCards">
+                <div class="card">
+                    <img src="img/why_choose.png" alt="">
+                    <h5>Chất Lượng Tinh Hoa <br> An Toàn Tuyệt Đối</h5>
+                    <p>Sở hữu vùng trồng nguyên liệu lớn: Sản phẩm của Kingwood được sản xuất từ nguồn nguyên liệu gỗ
+                        rừng trồng, đản bảo sự phát triển bền vững và bảo vệ môi trường.</p>
+                </div>
+                <div class="card">
+                    <img src="img/why_choose_1.png" alt="">
+                    <h5>Chất Lượng Tinh Hoa An Toàn Tuyệt Đối</h5>
+                    <p>Qui mô sản xuất lớn: Sở hữu hệ thống nhà xưởng lên tới 2000 m, hệ thống chuỗi liên kết sản xuất
+                        với 5 thành viên</p>
+                </div>
+                <div class="card">
+                    <img src="img/why_choose.png" alt="">
+                    <h5>Chất Lượng Tinh Hoa An Toàn Tuyệt Đối</h5>
+                    <p>Sở hữu máy móc công nghệ hiện đại: Kingwood trang bị nhiều máy móc tự động hiện đại được nhập
+                        khẩu để tăng năng suất, nâng cao chất lượng sản phẩm, làm được nhiều sản phẩm độc đáo, mới lạ
+                        trên thị trường</p>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section class="container" id="lienhe" style="padding:30px 0">
+            <h4>Liên hệ nhà phân phối của <span style="color: #EC9907;">Kingwood</span></h4>
+            <p class="pra">Đơn vị chịu trách nhiệm phân phối trực tiếp</span>
+            <div class="contact">
+                <div class="info">
+                    <img src="img/Logo2.png" alt="">
+                    <p style="color:#2A6F2B;margin-top:8px;font-weight: 700;margin-bottom: 10px;">
+                        CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN </p>
+                    <p style="color: #696969; font-size: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.4149 19.5133V11.7017L4.02447 13.5372L3 12.1713L12.391 5L15.8059 7.60386V5.85372H18.367V9.56743L21.7819 12.1713L20.7575 13.5372L18.367 11.7017V19.5133H14.0984V14.391H10.6835V19.5133H6.4149ZM10.6835 10.9974H14.0984C14.0984 10.5421 13.9277 10.1685 13.5862 9.87648C13.2447 9.5845 12.8463 9.4388 12.391 9.43937C11.9357 9.43994 11.5372 9.58593 11.1958 9.87733C10.8543 10.1687 10.6835 10.5421 10.6835 10.9974Z"
+                                fill="#2A6F2B" />
+                        </svg>
+                        231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh
+                        <br>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.09048 10.6505C8.31985 13.0666 10.3005 15.0387 12.7165 16.2766L14.5947 14.3984C14.8252 14.1679 15.1667 14.091 15.4655 14.1935C16.4217 14.5094 17.4547 14.6801 18.5133 14.6801C18.9829 14.6801 19.367 15.0643 19.367 15.5338V18.5133C19.367 18.9829 18.9829 19.367 18.5133 19.367C10.4968 19.367 4 12.8702 4 4.85372C4 4.38418 4.38418 4 4.85372 4H7.84176C8.31131 4 8.69549 4.38418 8.69549 4.85372C8.69549 5.92088 8.86623 6.94535 9.18211 7.90152C9.27602 8.20033 9.20772 8.53328 8.96868 8.77232L7.09048 10.6505Z"
+                                fill="#2A6F2B" />
+                        </svg>
+                        0962.963.238
+                        <br>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.367 5H4.70745C3.76835 5 3.00854 5.76835 3.00854 6.70745L3 16.9521C3 17.8912 3.76835 18.6596 4.70745 18.6596H18.367C19.3061 18.6596 20.0745 17.8912 20.0745 16.9521V6.70745C20.0745 5.76835 19.3061 5 18.367 5ZM18.367 8.4149L11.5372 12.6835L4.70745 8.4149V6.70745L11.5372 10.9761L18.367 6.70745V8.4149Z"
+                                fill="#2A6F2B" />
+                        </svg>
+
+                        info@kingwoodfactory.com
+                    </p>
+                </div>
+                <form class="form" id="contactForm" style="flex:1; text-align: center;">
+                    <div style="width: 100%; display: flex;gap: 15px;">
+                        <input style="width: 50%;" type="text" name="name" placeholder="Họ Và Tên" required>
+                        <input style="width: 50%;" type="text" placeholder="Số điện thoại" name="phone">
+                    </div>
+                    <input type="email" placeholder="Email" name="email">
+                    <textarea name="message" placeholder="Nội dung liên hệ" rows="5"></textarea>
+                    <button type="submit">Gửi</button>
+                </form>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <!-- Cột 1 -->
+                <div class="footer-col">
+                    <img src="img/Logo.png" alt="Kingwood" class="footer-logo">
+                    <p class="company-name">CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN</p>
+                    <p class="info">
+                        <i class="bi bi-geo-alt"></i> 231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh<br>
+                        <i class="bi bi-telephone"></i> 0962.963.238<br>
+                        <i class="bi bi-envelope"></i> info@kingwoodfactory.com
+                    </p>
+                </div>
+
+                <!-- Cột 2 -->
+                <div class="footer-col">
+                    <ul class="footer-menu">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Dịch vụ</a></li>
+                        <li><a href="#">Sản phẩm</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 3 -->
+                <div class="footer-col">
+                    <h5 class="footer-title">Mạng xã hội</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+
+                    <h5 class="footer-title mt-3">Liên hệ với Kingwood qua Email</h5>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Email" required>
+                        <button type="submit">Gửi</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>©2025 - CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Điều khoản dịch vụ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

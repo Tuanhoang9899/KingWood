@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kingwood - Tin tức chi tiết</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- Google fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jQuery (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="module" src="main.js"></script>
+    <style>
+        /* Breadcrumb */
+        .breadcrumb-nav {
+            gap: 2px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .breadcrumb-nav a:first-child {
+            padding-left: 0;
+        }
+
+        .breadcrumb-nav a {
+            color: #136b3a;
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .news-detail-section {
+            background: #fff;
+        }
+
+        .news-detail-section .content {
+            margin-top: 50px !important;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        /* Title */
+        .news-detail-title {
+            font-size: 26px;
+            text-transform: uppercase;
+            line-height: 1.3;
+            color: #1f1f1f;
+        }
+
+        /* Meta */
+        .news-meta {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Image */
+        .news-detail-img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Content */
+        .news-detail-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            color: #333;
+        }
+
+        /* ✅ Responsive */
+        @media(max-width:768px) {
+            .news-detail-title {
+                font-size: 20px;
+            }
+
+            .breadcrumb-nav {
+                font-size: 13px;
+            }
+
+            .news-detail-content p {
+                font-size: 15px;
+            }
+            .breadcrumb-nav{
+                display: block;
+            }
+            .breadcrumb-nav a{
+                padding-right: 3px;
+                padding-left: 3px;
+            }
+            .news-detail-section .content{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+        <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <header>
+        <div class="header-inner container d-flex align-items-center justify-content-between">
+            <!-- Menu trái -->
+            <div class="nav-left d-flex align-items-center menu_left">
+                <nav aria-label="Main navigation">
+                    <a href="#">Trang chủ</a>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#">Dịch vụ</a>
+                </nav>
+            </div>
+
+            <!-- Logo ở giữa -->
+            <div class="logo mx-auto">
+                <img src="img/Logo.png" alt="Kingwood">
+            </div>
+
+            <!-- Menu phải + ngôn ngữ -->
+            <div class="nav-right d-flex align-items-center menu_right">
+                <nav aria-label="Main navigation">
+                    <a href="#">Sản phẩm</a>
+                    <a href="#" class="btn-active">Tin tức</a>
+                    <a href="#">Liên hệ</a>
+                </nav>
+                <div class="lang ms-3 d-flex align-items-center">
+                    <div class="flag">VN</div>
+                    <div style="width:8px"></div>
+                    <a class="btn-secondary" href="#">EN</a>
+                </div>
+            </div>
+        </div>
+             <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                 <div class="lang ms-3 d-flex align-items-center">
+                    <div class="flag">VN</div>
+                    <div style="width:8px"></div>
+                    <a class="btn-secondary" href="#">EN</a>
+                </div>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- hero -->
+        <section class="banner_home container">
+            <div class="hero-row">
+                <div class="hero-left">
+                    <h1 class="eyebrow_sp">Tin tức <span class="eyebrow">thị trường</span></h1>
+                    <p class="hero-sub">OEM/ODM thớt, đũa, tô/chén/khay… xuất khẩu Mỹ, Nhật, Đài Loan, Trung Quốc.</p>
+                    <div class="hero-ctas">
+                        <a class="btn-primary" href="#Xemngay">Xem ngay</a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="product-hero">
+                        <img src="img/banner_news.png" alt="banner tin tức">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="news-detail-section py-5">
+            <div class="container">
+
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb-nav mb-3">
+                    <a href="#">Trang chủ</a> /
+                    <a href="#">Tin tức</a> /
+                    <span>Kingwood tự hào được công nhận...</span>
+                </nav>
+
+
+                <div class="content">
+                    <!-- Title -->
+                    <h2 class="news-detail-title fw-bold mb-2">
+                        KINGWOOD TỰ HÀO ĐƯỢC CÔNG NHẬN LÀ DOANH NGHIỆP TIÊU BIỂU CỦA NĂM 2025
+                    </h2>
+
+                    <!-- Meta -->
+                    <p class="news-meta mb-4">
+                        Tác giả: <strong>Hoàng Phúc</strong>, 28/10/2025
+                    </p>
+
+                    <!-- Feature Image -->
+                    <img src="img/news_2.png" alt="" class="news-detail-img mb-4">
+
+                    <!-- Content -->
+                    <div class="news-detail-content">
+                        <p>Lorem ipsum dolor sit amet consectetur. Interdum pharetra sed tellus morbi amet purus.
+                            Blandit diam ornare id purus nisl nullam aliquam. Suspendisse turpis sapien eget risus
+                            molestie dolor diam. Amet tincidunt non suscipit diam.Lorem ipsum dolor sit amet
+                            consectetur. Interdum pharetra sed tellus morbi amet purus. Blandit diam ornare id purus
+                            nisl nullam aliquam. Suspendisse turpis sapien eget risus molestie dolor diam. Amet
+                            tincidunt non suscipit diam.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur. Interdum pharetra sed tellus morbi amet purus.
+                            Blandit diam ornare id purus nisl nullam aliquam. Suspendisse turpis sapien eget risus
+                            molestie dolor diam. Amet tincidunt non suscipit diam.Lorem ipsum dolor sit amet
+                            consectetur. Interdum pharetra sed tellus morbi amet purus. Blandit diam ornare id purus
+                            nisl nullam aliquam. Suspendisse turpis sapien eget risus molestie dolor diam. Amet
+                            tincidunt non suscipit diam.Lorem ipsum dolor sit amet consectetur. Interdum pharetra sed
+                            tellus morbi amet purus. Blandit diam ornare id purus nisl nullam aliquam. Suspendisse
+                            turpis sapien eget risus molestie dolor diam. Amet tincidunt non suscipit diam.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur. Interdum pharetra sed tellus morbi amet purus.
+                            Blandit diam ornare id purus nisl nullam aliquam. Suspendisse turpis sapien eget risus
+                            molestie dolor diam. Amet tincidunt non suscipit diam.Lorem ipsum dolor sit amet
+                            consectetur. Interdum pharetra sed tellus morbi amet purus. Blandit diam ornare id purus
+                            nisl nullam aliquam. Suspendisse turpis sapien eget risus molestie dolor diam. Amet
+                            tincidunt non suscipit diam.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur. Interdum pharetra sed tellus morbi amet purus.
+                            Blandit diam ornare id purus nisl nullam aliquam. Suspendisse turpis sapien eget risus
+                            molestie dolor diam. Amet tincidunt non suscipit diam.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- news + footer -->
+        <section class="container" style="padding-bottom:80px; margin-top: 50px;">
+            <h4
+                style="color:var(--accent-2);margin-bottom:20px; text-align: center; font-size: 28px; font-weight: 600;">
+                Tin tức liên quan</h4>
+            <div class="news">
+                <div class="news-main">
+                    <img src="img/news_2.png" alt="">
+                    <h5 style="margin:10px 0">Lorem ipsum dolor sit amet consectetur.</h5>
+                    <p style="color:var(--muted)">Tóm tắt tin chính... Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit.</p>
+                </div>
+                <div class="news-side">
+                    <div class="news-item">
+                        <img src="img/news_2.png" alt="Tin tức">
+                        <div class="news-content">
+                            <p class="date">Thứ Sáu, 26/09/2025</p>
+                            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                            <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
+                                listen</p>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <img src="img/news_2.png" alt="Tin tức">
+                        <div class="news-content">
+                            <p class="date">Thứ Sáu, 26/09/2025</p>
+                            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                            <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
+                                listen</p>
+                        </div>
+                    </div>
+
+                    <div class="news-item">
+                        <img src="img/news_2.png" alt="Tin tức">
+                        <div class="news-content">
+                            <p class="date">Thứ Sáu, 26/09/2025</p>
+                            <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+                            <p class="desc">Lorem ipsum dolor sit amet consectetur. Imperdiet interdum sit down and
+                                listen</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <!-- Cột 1 -->
+                <div class="footer-col">
+                    <img src="img/Logo.png" alt="Kingwood" class="footer-logo">
+                    <p class="company-name">CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN</p>
+                    <p class="info">
+                        <i class="bi bi-geo-alt"></i> 231-233 Lê Thánh Tôn, Phường Bến Thành, TP Hồ Chí Minh<br>
+                        <i class="bi bi-telephone"></i> 0962.963.238<br>
+                        <i class="bi bi-envelope"></i> info@kingwoodfactory.com
+                    </p>
+                </div>
+
+                <!-- Cột 2 -->
+                <div class="footer-col">
+                    <ul class="footer-menu">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Dịch vụ</a></li>
+                        <li><a href="#">Sản phẩm</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cột 3 -->
+                <div class="footer-col">
+                    <h5 class="footer-title">Mạng xã hội</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+
+                    <h5 class="footer-title mt-3">Liên hệ với Kingwood qua Email</h5>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Email" required>
+                        <button type="submit">Gửi</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>©2025 - CÔNG TY TNHH TM VÀ XNK TÂY NGUYÊN. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Điều khoản dịch vụ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>
