@@ -185,7 +185,7 @@ header {
 }
 
 .logo img {
-    max-width: 70%
+    max-width: 100%
 }
 
 nav {
@@ -1146,6 +1146,18 @@ section.card-section .owl-dots.disabled, .cert .owl-dots.disabled,.related_pr .o
         padding: 10px;
         overflow: scroll;
         gap: 30px;
+    }
+    .contact .info{
+        text-align: center;
+    }
+    .contact .info p{
+        text-align: start;
+    }
+    .story p{
+        width: 100%;
+    }
+    .story {
+        text-align: center;
     }
 }
 
